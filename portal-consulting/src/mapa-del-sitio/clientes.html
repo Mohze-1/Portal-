@@ -1,43 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Clientes - Portal</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
     <header>
-        <h1>Clientes de Portal</h1>
-        <nav>
-            <ul>
-                <li><a href="inicio.html">Inicio</a></li>
-                <li><a href="porque-elegir-portal.html">Porqué elegir Portal?</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="clientes.html">Clientes</a></li>
-                <li><a href="opiniones-cliente.html">Opiniones de cliente</a></li>
-                <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="header-inner container" role="banner">
+            <a class="logo" href="inicio.html">
+                <img src="../assets/logo.png" alt="Portal logo" />
+                <span>Portal</span>
+            </a>
+            <nav role="navigation" aria-label="Principal">
+                <a href="inicio.html">Inicio</a>
+                <a href="porque-elegir-portal.html">Porqué elegir Portal?</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="clientes.html" aria-current="page">Clientes</a>
+                <a href="opiniones-cliente.html">Opiniones</a>
+                <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+                <a href="contacto.html" class="btn btn--ghost">Contacto</a>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section>
-            <h2>Nuestros Clientes</h2>
-            <p>A continuación, se presenta una lista de algunos de nuestros valiosos clientes:</p>
-            <ul>
-                <li>Cliente A</li>
-                <li>Cliente B</li>
-                <li>Cliente C</li>
-                <li>Cliente D</li>
-                <li>Cliente E</li>
-            </ul>
-            <p>Estamos orgullosos de haber trabajado con estas empresas y de haber contribuido a su éxito.</p>
+
+    <main class="container" role="main">
+        <!-- Hero -->
+        <section class="hero fade-up" aria-labelledby="clientes-title">
+            <div class="hero-left">
+                <span class="kicker">Confianza & Resultados</span>
+                <h1 id="clientes-title">Empresas que confían en Portal</h1>
+                <p>
+                    Diseñamos experiencias digitales escalables, centradas en resultados y marketing.
+                    Estas son algunas organizaciones con las que colaboramos para crecer su negocio online.
+                </p>
+                <div class="cta-row">
+                    <a class="btn btn--primary" href="servicios.html">Ver servicios</a>
+                    <a class="btn btn--ghost" href="portfolio.html">Ver trabajos</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="card zoom-in" style="max-width:380px;">
+                    <h3>¿Buscas un partner digital?</h3>
+                    <p class="kicker" style="display:inline-block; margin-bottom:10px;">Soporte & Consultoría</p>
+                    <p style="color:var(--color-muted)">Contáctanos para auditar tu web, optimizar conversiones o lanzar una nueva campaña.</p>
+                    <div style="margin-top:12px">
+                        <a class="btn btn--primary" href="contacto.html">Contactar</a>
+                        <a class="btn btn--ghost" href="../soporte/soporte-tecnico.html">Soporte técnico</a>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <!-- Clientes: logos -->
+        <section aria-labelledby="logos-title" style="margin-top:28px;">
+            <h2 id="logos-title">Algunos de nuestros clientes</h2>
+            <p style="color:var(--color-muted); margin-top:6px;">
+                Trabajamos con pymes, agencias y startups en proyectos de diseño web, marketing y hosting.
+            </p>
+
+            <div class="portfolio-grid" style="margin-top:16px;">
+                <!-- Replace src with real logo files in ../assets/logos/ or use placeholders -->
+                <div class="portfolio-item card fade-up" style="padding:18px; display:flex; align-items:center; justify-content:center;">
+                    <img src="../assets/logos/logo1.png" alt="Cliente A" style="height:64px; width:auto"/>
+                </div>
+                <div class="portfolio-item card fade-up" style="padding:18px; display:flex; align-items:center; justify-content:center;">
+                    <img src="../assets/logos/logo2.png" alt="Cliente B" style="height:64px; width:auto"/>
+                </div>
+                <div class="portfolio-item card fade-up" style="padding:18px; display:flex; align-items:center; justify-content:center;">
+                    <img src="../assets/logos/logo3.png" alt="Cliente C" style="height:64px; width:auto"/>
+                </div>
+                <div class="portfolio-item card fade-up" style="padding:18px; display:flex; align-items:center; justify-content:center;">
+                    <img src="../assets/logos/logo4.png" alt="Cliente D" style="height:64px; width:auto"/>
+                </div>
+            </div>
+
+            <p style="color:var(--color-muted); margin-top:12px;">
+                ¿Quieres aparecer aquí? Ponte en contacto y hablemos de cómo potenciar tu presencia digital.
+            </p>
+        </section>
+
+        <!-- Casos / Mini portfolio -->
+        <section style="margin-top:30px;">
+            <h2>Casos de éxito</h2>
+            <div class="services-grid" style="margin-top:12px;">
+                <article class="card fade-up" aria-labelledby="case1">
+                    <h3 id="case1">Tienda online A</h3>
+                    <p class="kicker" style="background:transparent; color:var(--color-muted); font-weight:600; padding:0;">E-commerce / SEO</p>
+                    <p style="margin-top:8px; color:var(--color-muted);">Aumentamos conversiones un 48% mediante rediseño, optimización móvil y campañas.</p>
+                    <a class="btn btn--ghost" href="portfolio.html" style="margin-top:10px; display:inline-block;">Ver proyecto</a>
+                </article>
+
+                <article class="card fade-up" aria-labelledby="case2">
+                    <h3 id="case2">Startup B</h3>
+                    <p class="kicker" style="background:transparent; color:var(--color-muted); font-weight:600; padding:0;">Landing / Performance</p>
+                    <p style="margin-top:8px; color:var(--color-muted);">Landing optimizada para captación con seguimiento y A/B testing.</p>
+                    <a class="btn btn--ghost" href="portfolio.html" style="margin-top:10px; display:inline-block;">Ver proyecto</a>
+                </article>
+
+                <article class="card fade-up" aria-labelledby="case3">
+                    <h3 id="case3">Agencia C</h3>
+                    <p class="kicker" style="background:transparent; color:var(--color-muted); font-weight:600; padding:0;">Hosting / Soporte</p>
+                    <p style="margin-top:8px; color:var(--color-muted);">Migración segura a hosting gestionado y SLA 24/7.</p>
+                    <a class="btn btn--ghost" href="../soporte/soporte-tecnico.html" style="margin-top:10px; display:inline-block;">Soporte</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section style="margin-top:30px;">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <div class="services-grid" style="margin-top:12px;">
+                <div class="card fade-up">
+                    <p style="font-weight:700; margin-bottom:8px;">"Portal transformó nuestra web y las visitas se convirtieron en ventas."</p>
+                    <p style="color:var(--color-muted); margin:0;">— Laura, CEO Tienda A</p>
+                </div>
+                <div class="card fade-up">
+                    <p style="font-weight:700; margin-bottom:8px;">"El equipo fue claro, rápido y orientado a resultados."</p>
+                    <p style="color:var(--color-muted); margin:0;">— Martín, Fundación B</p>
+                </div>
+                <div class="card fade-up">
+                    <p style="font-weight:700; margin-bottom:8px;">"Soporte 24/7 y despliegues sin drama."</p>
+                    <p style="color:var(--color-muted); margin:0;">— Diego, Agencia C</p>
+                </div>
+            </div>
+        </section>
+
     </main>
-    <footer>
-        <p>&copy; 2023 Portal. Todos los derechos reservados.</p>
+
+    <footer class="container" role="contentinfo" style="margin-top:28px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+            <p style="margin:0;">&copy; 2025 Portal. Todos los derechos reservados.</p>
+            <nav aria-label="Enlaces pie">
+                <a href="contacto.html" style="color:var(--color-cta); text-decoration:none; font-weight:700;">Contacto</a>
+                <a href="../soporte/soporte-tecnico.html" style="margin-left:12px;">Soporte</a>
+            </nav>
+        </div>
     </footer>
+
+    <script src="../js/main.js" defer></script>
 </body>
 </html>
