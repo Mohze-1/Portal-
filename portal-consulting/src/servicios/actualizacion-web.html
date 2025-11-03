@@ -3,58 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualización de Páginas Web - Portal</title>
+    <title>Actualización Web - Portal</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Ajustes locales que garantizan que el nav no se desborde si tu CSS global falta */
+        nav { display:flex; align-items:center; gap:8px; }
+        nav ul { display:flex; gap:8px; margin:0; padding:0; list-style:none; align-items:center; white-space:nowrap; }
+        nav { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+        nav::-webkit-scrollbar{ display:none; }
+
+        /* Botón hamburguesa visible solo en pantallas pequeñas */
+        .nav-toggle {
+            display:none;
+            background:transparent;
+            border:0;
+            color:#fff;
+            font-size:1.25rem;
+            padding:8px;
+            cursor:pointer;
+        }
+        @media (max-width:768px){
+            .nav-toggle { display:inline-flex; align-items:center; justify-content:center; }
+            /* Cuando se abre, el nav mostrará una columna vertical si se desea */
+            .main-nav.open ul { flex-direction:column; background:rgba(0,0,0,0.04); padding:8px; border-radius:8px; }
+            .main-nav.open ul li { width:100%; }
+            .main-nav.open .dropdown-content { display:block; position:static; background:transparent; box-shadow:none; padding-left:8px; }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Actualización de Páginas Web</h1>
+        <div class="header-inner">
+            <a href="../mapa-del-sitio/inicio.html" class="logo">Portal Diseño Web</a>
+
+            <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+            <nav class="main-nav" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="../mapa-del-sitio/inicio.html">Inicio</a></li>
+                    <li><a href="../mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegir Portal?</a></li>
+
+                    <li class="dropdown">
+                        <span class="dropdown-trigger" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">Servicios <span class="arrow">▾</span></span>
+                        <div class="dropdown-content" role="menu" aria-label="Servicios">
+                            <a href="diseno-web.html">Diseño de Páginas Web</a>
+                            <a href="web-adaptativas.html">Páginas Web Adaptativas</a>
+                            <a href="web-autoadministrables.html">Páginas Web Autoadministrables</a>
+                            <a href="hosting.html">Hosting</a>
+                            <a href="actualizacion-web.html">Actualización de páginas web</a>
+                        </div>
+                    </li>
+
+                    <li><a href="../mapa-del-sitio/portfolio.html">Portfolio</a></li>
+                    <li><a href="../mapa-del-sitio/clientes.html">Clientes</a></li>
+                    <li><a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones</a></li>
+                    <li><a href="../mapa-del-sitio/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+                    <li><a href="../mapa-del-sitio/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
+
+    <main class="container">
         <section>
-            <h2>Servicios de Actualización</h2>
-            <p>En Portal, ofrecemos servicios de actualización de páginas web para mantener su sitio siempre fresco y relevante. Nuestros servicios incluyen:</p>
+            <h1>Actualización de Páginas Web</h1>
+            <p>Ofrecemos servicios de actualización y modernización para sitios existentes. Renovamos diseño, tecnología y rendimiento para que tu web sea segura, rápida y convierta mejor.</p>
+
+            <h2>Qué incluye el servicio</h2>
             <ul>
-                <li>Actualización de contenido</li>
-                <li>Mejoras en el diseño</li>
-                <li>Optimización para dispositivos móviles</li>
-                <li>Actualización de SEO</li>
-                <li>Integración de nuevas funcionalidades</li>
+                <li>Rediseño visual y mejora de la experiencia de usuario (UX)</li>
+                <li>Actualización de tecnologías, librerías y frameworks</li>
+                <li>Optimización de rendimiento: images, lazy loading, caché y minificación</li>
+                <li>Hardening de seguridad y revisión de dependencias</li>
+                <li>Migración a entornos modernos y configuración de backups</li>
+                <li>Capacitación breve y documentación para el equipo</li>
             </ul>
-            <p>Nos aseguramos de que su sitio web esté siempre alineado con las últimas tendencias y tecnologías.</p>
+
+            <h2>Proceso de trabajo</h2>
+            <ol>
+                <li>Auditoría inicial: revisión de estado, rendimiento y seguridad.</li>
+                <li>Propuesta de mejoras con estimación y alcance.</li>
+                <li>Desarrollo en entorno de prueba y validación con el cliente.</li>
+                <li>Despliegue a producción y verificación post-lanzamiento.</li>
+                <li>Soporte y mantenimiento según plan contratado.</li>
+            </ol>
+
+            <h2>Planes y precios orientativos</h2>
+            <p>Ofrecemos tres paquetes básicos pensados según tamaño y necesidades:</p>
+            <ul>
+                <li><strong>Básico:</strong> Auditoría y mejoras puntuales — ideal para sitios pequeños.</li>
+                <li><strong>Profesional:</strong> Rediseño parcial, optimización completa y seguridad — recomendado para Pymes.</li>
+                <li><strong>Enterprise:</strong> Migración, integraciones y soporte dedicado — para proyectos con mayor complejidad.</li>
+            </ul>
+            <p>Para cotización exacta solicita una <a href="../mapa-del-sitio/contacto.html">consulta</a> gratuita con nuestro equipo.</p>
+
+            <h2>Casos de éxito</h2>
+            <p>Hemos ayudado a clientes a reducir el tiempo de carga en un 60% y a mejorar la conversión en un 25% tras la actualización. Podemos mostrarte ejemplos y métricas en la reunión de diagnóstico.</p>
         </section>
     </main>
+
     <footer class="footer-dark">
         <div class="container">
             <div class="footer-columns">
-                <!-- Columna 1: Mapa del Sitio -->
                 <div class="footer-col">
                     <h4>Mapa del Sitio</h4>
                     <ul>
-                        <li><a href="inicio.html">Inicio</a></li>
-                        <li><a href="porque-elegir-portal.html">¿Por qué elegir Portal?</a></li>
-                        <li><a href="servicios.html">Servicios</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="clientes.html">Clientes</a></li>
-                        <li><a href="opiniones-cliente.html">Opiniones de Clientes</a></li>
-                        <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="../mapa-del-sitio/inicio.html">Inicio</a></li>
+                        <li><a href="../mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegir Portal?</a></li>
+                        <li><a href="../mapa-del-sitio/servicios.html">Servicios</a></li>
+                        <li><a href="../mapa-del-sitio/portfolio.html">Portfolio</a></li>
+                        <li><a href="../mapa-del-sitio/clientes.html">Clientes</a></li>
+                        <li><a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a></li>
+                        <li><a href="../mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+                        <li><a href="../mapa-del-sitio/contacto.html">Contacto</a></li>
                     </ul>
                 </div>
 
-                <!-- Columna 2: Servicios -->
                 <div class="footer-col">
                     <h4>Servicios</h4>
                     <ul>
-                        <li><a href="../servicios/diseno-web.html">Diseño de Páginas Web</a></li>
-                        <li><a href="../servicios/web-adaptativas.html">Páginas Web Adaptativas</a></li>
-                        <li><a href="../servicios/web-autoadministrables.html">Páginas Web Autoadministrables</a></li>
-                        <li><a href="../servicios/hosting.html">Hosting</a></li>
-                        <li><a href="../servicios/actualizacion-web.html">Actualización de páginas web</a></li>
+                        <li><a href="diseno-web.html">Diseño de Páginas Web</a></li>
+                        <li><a href="web-adaptativas.html">Páginas Web Adaptativas</a></li>
+                        <li><a href="web-autoadministrables.html">Páginas Web Autoadministrables</a></li>
+                        <li><a href="hosting.html">Hosting</a></li>
+                        <li><a href="actualizacion-web.html">Actualización de páginas web</a></li>
                     </ul>
                 </div>
 
-                <!-- Columna 3: Contáctenos -->
                 <div class="footer-col">
                     <h4>Contáctenos</h4>
                     <ul class="contact-info">
@@ -70,20 +145,51 @@
                 </div>
             </div>
 
-            <div class="footer-badges">
-                <img src="../assets/badges/data-fiscal.png" alt="Data Fiscal" class="badge">
-                <div class="certifications">
-                    <img src="../assets/badges/six-sigma.png" alt="Six Sigma Black Belt" class="cert-badge">
-                    <img src="../assets/badges/aida.png" alt="A.I.D.A Marketing Principles" class="cert-badge">
-                </div>
-            </div>
-
             <div class="footer-bottom">
                 <p>&copy; 2023 - 2025 • Portal Diseño Web Argentina • Todos los Derechos Reservados</p>
                 <p>TEL: (011) 15-5139-6514 • Buenos Aires • Argentina</p>
-                <img src="../assets/logo-footer.png" alt="Portal" class="footer-logo">
             </div>
         </div>
     </footer>
+
+    <script>
+        // Toggle nav open on small screens
+        (function(){
+            const navToggle = document.querySelector('.nav-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            navToggle && navToggle.addEventListener('click', () => {
+                const open = mainNav.classList.toggle('open');
+                navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+
+            // Dropdown: on small screens toggle .open on parent
+            const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
+            dropdownTriggers.forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    const mq = window.matchMedia('(max-width: 768px)');
+                    if (!mq.matches) return; // solo en móvil manejar por click
+                    const parent = trigger.closest('.dropdown');
+                    const isOpen = parent.classList.toggle('open');
+                    trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    e.stopPropagation();
+                });
+
+                // keyboard activation (Enter / Space)
+                trigger.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        trigger.click();
+                    }
+                });
+            });
+
+            // Cerrar dropdown si se hace click fuera (móvil)
+            document.addEventListener('click', (e) => {
+                document.querySelectorAll('.dropdown.open').forEach(d => {
+                    if (!d.contains(e.target)) d.classList.remove('open');
+                });
+            });
+        })();
+    </script>
 </body>
 </html>

@@ -14,12 +14,27 @@
                 <span>Portal</span>
             </a>
 
+            <!-- Reemplaza el link existente en el nav con esto -->
             <nav role="navigation" aria-label="Principal">
-                <a href="inicio.html">Inicio</a>
-                <a href="porque-elegir-portal.html">¿Por qué Portal?</a>
-                <a href="servicios.html">Servicios</a>
-                <a href="contacto.html" class="btn btn--primary">Contacto</a>
-            </nav>
+        <a href="inicio.html">Inicio</a>
+
+        <div class="dropdown" id="dropdown-why">
+            <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
+                ¿Por qué Portal? <span class="arrow">▾</span>
+            </button>
+            <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
+                <a role="menuitem" href="porque-elegir-portal.html">¿Por qué elegirnos?</a>
+                <a role="menuitem" href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                <a role="menuitem" href="opiniones-cliente.html">Opiniones de Clientes</a>
+            </div>
+        </div>
+
+        <a href="servicios.html">Servicios</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="opiniones-cliente.html">Opiniones</a>
+        <a href="contacto.html" class="btn btn--primary">Contacto</a>
+    </nav>
         </div>
     </header>
 
