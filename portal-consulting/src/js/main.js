@@ -18,38 +18,77 @@
     }, { passive: true });
 })();
 
-(function () {
-    const dropdown = document.getElementById('dropdown-why');
-    if (!dropdown) return;
+/* Reemplazo/añadido: manejo genérico de dropdowns (hover en dispositivos con pointer + click toggle accesible)
+   con retardo en el cierre para evitar que se cierre antes de alcanzar el panel */
+(function manageDropdowns() {
+    const dropdowns = Array.from(document.querySelectorAll('.dropdown'));
+    if (!dropdowns.length) return;
 
-    const trigger = dropdown.querySelector('.dropdown-trigger');
-    const menu = dropdown.querySelector('.dropdown-content');
-
-    function openDropdown() {
-        dropdown.classList.add('open');
-        trigger.setAttribute('aria-expanded', 'true');
-        menu.setAttribute('aria-hidden', 'false');
+    function closeAll(except = null) {
+        dropdowns.forEach(dd => {
+            if (dd === except) return;
+            const trig = dd.querySelector('.dropdown-trigger');
+            const menu = dd.querySelector('.dropdown-content');
+            dd.classList.remove('open');
+            if (trig) trig.setAttribute('aria-expanded', 'false');
+            if (menu) menu.setAttribute('aria-hidden', 'true');
+        });
     }
 
-    function closeDropdown() {
-        dropdown.classList.remove('open');
+    dropdowns.forEach(dropdown => {
+        const trigger = dropdown.querySelector('.dropdown-trigger');
+        const menu = dropdown.querySelector('.dropdown-content');
+        if (!trigger || !menu) return;
+
+        // Ensure ARIA initial state
         trigger.setAttribute('aria-expanded', 'false');
         menu.setAttribute('aria-hidden', 'true');
-    }
 
-    trigger.addEventListener('click', function (e) {
-        const isOpen = dropdown.classList.contains('open');
-        isOpen ? closeDropdown() : openDropdown();
+        let closeTimer = null;
+
+        function openImmediate() {
+            clearTimeout(closeTimer);
+            dropdown.classList.add('open');
+            trigger.setAttribute('aria-expanded', 'true');
+            menu.setAttribute('aria-hidden', 'false');
+            closeAll(dropdown);
+        }
+        function closeImmediate() {
+            dropdown.classList.remove('open');
+            trigger.setAttribute('aria-expanded', 'false');
+            menu.setAttribute('aria-hidden', 'true');
+        }
+        function closeDelayed(timeout = 180) {
+            clearTimeout(closeTimer);
+            closeTimer = setTimeout(() => closeImmediate(), timeout);
+        }
+
+        // Click toggles dropdown (stops propagation so document click doesn't immediately close it)
+        trigger.addEventListener('click', function (e) {
+            e.stopPropagation();
+            dropdown.classList.contains('open') ? closeImmediate() : openImmediate();
+        });
+
+        // Hover behavior only on devices that support hover (avoid interfering on touch)
+        if (window.matchMedia && window.matchMedia('(hover: hover)').matches) {
+            // open on enter, delay close on leave to give time to reach the panel
+            dropdown.addEventListener('mouseenter', openImmediate);
+            dropdown.addEventListener('mouseleave', () => closeDelayed(160));
+
+            // keep open when mouse enters the menu itself
+            menu.addEventListener('mouseenter', openImmediate);
+            menu.addEventListener('mouseleave', () => closeDelayed(160));
+        }
     });
 
-    // Cerrar al hacer click fuera
+    // Close when clicking outside any dropdown
     document.addEventListener('click', function (e) {
-        if (!dropdown.contains(e.target)) closeDropdown();
+        if (!e.target.closest('.dropdown')) closeAll();
     });
 
-    // Cerrar con Escape
+    // Close with Escape
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeDropdown();
+        if (e.key === 'Escape') closeAll();
     });
 })();
 

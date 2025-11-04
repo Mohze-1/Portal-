@@ -248,231 +248,97 @@ nav a.active,
     color: #fff;
 }
 
-/* make room for fixed header */
-body {
-    font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(180deg, #f8f6fb 0%, #eef2f6 100%);
-    color: var(--color-heading);
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.6;
-    font-size:16px;
-    padding-top: var(--header-height);
-}
-
-/* Layout */
-.container {
-    width: min(1200px, 90%);
-    margin: 0 auto;
-    padding: 2rem 0;
+/* Header dropdown specifics: fondo oscuro, links blancos y apertura por .open
+   Hover-only reveal limitado a dispositivos con pointer */
+header .dropdown {
     position: relative;
+    z-index: 10010;
 }
 
-/* Header / Nav (reemplaza la regla header existente) */
-
-/* reservar espacio para header fijo */
-body {
-    padding-top: var(--header-height);
-}
-
-/* Header fijo, fondo oscuro y legible */
-header {
-    position: fixed;
-    inset: 0 0 auto 0;
-    height: var(--header-height);
+header .dropdown .dropdown-trigger {
     background: #000;
     color: #fff;
-    z-index: 9999;
-    box-shadow: var(--shadow-md);
-    backdrop-filter: blur(6px);
-    display: block;
-    transition: transform 260ms var(--transition), visibility 260ms var(--transition);
-}
-
-.header-inner {
-    width: min(1200px, 95%);
-    margin: 0 auto;
-    height: 100%;
-    display: flex;
-    align-items: center; /* mantener centrado verticalmente */
-    justify-content: space-between;
-    gap: 16px;
-    padding: 0 16px;
-    padding-top: 10px;    /* pequeño empuje hacia abajo para mayor separación visual */
-    padding-bottom: 10px;
-}
-
-/* Logo textual */
-.logo {
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.05rem;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-}
-
-/* Imagen del logo: tamaño controlado y no se cortará */
-.logo img {
-    height: 150px;         /* aumentar la altura visible del logo */
-    width: auto;
-    display: block;
-    object-fit: contain;
-    border-radius: 10px;   /* opcional, suaviza si hay fondo */
-}
-
-/* Aumentar separación del texto del logo para mejorar legibilidad */
-.logo span {
-    font-size: 1rem;
-    line-height: 1;
-    color: #fff;
-}
-
-/* Nav layout: horizontal, no wrapping */
-nav, .main-nav {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    white-space: nowrap;
-}
-
-/* Nav item base: letras blancas y fondo negro (píldora) */
-nav a,
-.main-nav a,
-nav .dropdown-trigger,
-.main-nav .dropdown-trigger {
-    color: #fff;
-    background: #000;
-    text-decoration: none;
     padding: 8px 12px;
     border-radius: 10px;
     font-weight: 600;
-    font-size: 0.95rem;
-    transition: background 180ms ease, color 180ms ease, transform 120ms ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
 }
 
-/* Hover y foco: naranja */
-nav a:hover,
-nav a:focus,
-.main-nav a:hover,
-.main-nav a:focus,
-.dropdown-trigger:hover,
-.dropdown-trigger:focus,
-.dropdown-trigger.active {
-    background: var(--color-orange);
-    color: #fff;
-    outline: none;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(255,154,0,0.12);
-}
+header .dropdown .dropdown-content {
+    /* asegurar que no quede en display:none por reglas genéricas */
+    display: block;
 
-/* Estado activo (cuando estás en esa página) */
-nav a.active,
-.main-nav a.active {
-    background: var(--color-orange);
-    color: #fff;
-    box-shadow: 0 10px 30px rgba(255,154,0,0.12);
-}
-
-/* Dropdown panel links keep same behaviour */
-.dropdown-content a,
-.dropdown-panel a {
-    color: #fff;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 220px;
     background: #000;
-    padding: 10px 14px;
+    color: #fff;
+    border-radius: 8px;
+    padding: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    transform-origin: top left;
+
+    /* animables */
+    opacity: 0;
+    transform: translateY(-8px) scale(0.99);
+    visibility: hidden;
+    pointer-events: none;
+
+    /* suavizado mejorado */
+    transition: opacity 260ms cubic-bezier(.2,.9,.3,1), transform 260ms cubic-bezier(.2,.9,.3,1), visibility 260ms;
+}
+
+/* show when JS adds .open */
+header .dropdown.open .dropdown-content {
+    display: block; /* reforzar para evitar override */
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* asegurar color claro de los links dentro del header (anula reglas genéricas más abajo) */
+header .dropdown .dropdown-content a {
+    color: #fff;
+    background: transparent;
+    padding: 8px 12px;
     display: block;
     border-radius: 8px;
-    margin: 4px 8px;
-}
-.dropdown-content a:hover,
-.dropdown-panel a:hover,
-.dropdown-content a:focus,
-.dropdown-panel a:focus {
-    background: var(--color-orange);
-    color: #fff;
+    margin: 4px 0;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-/* Ensure dropdown-trigger shows active when one of its children is active */
-.dropdown-trigger.active {
-    background: var(--color-orange);
-    color: #fff;
-}
-
-/* Mobile / small screens: keep nav visible as horizontal scroller */
-@media (max-width: 768px) {
-    :root { --header-height: 64px; }
-    body { padding-top: var(--header-height); }
-
-    .header-inner { padding: 0 12px; }
-
-    /* Nav becomes horizontally scrollable */
-    nav, .main-nav {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 6px;
+/* Hover-only reveal limitado a dispositivos con pointer (ya no usamos display aquí) */
+@media (hover: hover) {
+    header nav .dropdown:hover .dropdown-content {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        visibility: visible;
+        pointer-events: auto;
     }
-    nav::-webkit-scrollbar { display: none; }
+}
 
-    /* Dropdown: render content inline within flow for easy tap */
-    .dropdown-content {
+/* Mobile: keep existing behavior (menu opens when .open is set by JS) */
+@media (max-width: 768px) {
+    header .dropdown .dropdown-content {
         position: static;
         background: transparent;
         box-shadow: none;
         padding: 0;
         margin: 0;
-        min-width: auto;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        display: none; /* hide nested links by default to save space */
+        display: none; /* JS will add .open to show */
     }
-    /* Show dropdown items when trigger has .open class (toggle via small script if desired) */
-    .dropdown.open .dropdown-content {
+    header .dropdown.open .dropdown-content {
         display: block;
-        background: rgba(0,0,0,0.03);
+        background: rgba(0,0,0,0.06);
         padding: 6px 8px;
         border-radius: 8px;
-        margin-left: 8px;
     }
-    /* style mobile dropdown links inline */
-    .dropdown.open .dropdown-content a {
+    header .dropdown .dropdown-content a {
         color: rgba(255,255,255,0.95);
         padding: 8px 10px;
         background: transparent;
-    }
-    .dropdown-trigger .arrow { display: none; }
-}
-
-/* Utility class to hide header instantly (keeps for scripts) */
-.header--hidden {
-    transform: translateY(-120%) !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    transition: none !important;
-}
-
-/* Footer (small adjustments to match consultora look) */
-.footer-dark {
-    background: linear-gradient(90deg, #2d1b69, #44337a);
-    color: #fff;
-    padding: 3.5rem 0 2rem;
-    border-radius: 8px;
-}
-
-/* Ensure footer columns collapse on small screens */
-@media (max-width: 768px) {
-    .footer-columns {
-        grid-template-columns: 1fr;
-        gap: 24px;
     }
 }
 
