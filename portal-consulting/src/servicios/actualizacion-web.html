@@ -5,62 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualización Web - Portal</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <style>
-        /* Ajustes locales que garantizan que el nav no se desborde si tu CSS global falta */
-        nav { display:flex; align-items:center; gap:8px; }
-        nav ul { display:flex; gap:8px; margin:0; padding:0; list-style:none; align-items:center; white-space:nowrap; }
-        nav { overflow-x:auto; -webkit-overflow-scrolling:touch; }
-        nav::-webkit-scrollbar{ display:none; }
-
-        /* Botón hamburguesa visible solo en pantallas pequeñas */
-        .nav-toggle {
-            display:none;
-            background:transparent;
-            border:0;
-            color:#fff;
-            font-size:1.25rem;
-            padding:8px;
-            cursor:pointer;
-        }
-        @media (max-width:768px){
-            .nav-toggle { display:inline-flex; align-items:center; justify-content:center; }
-            /* Cuando se abre, el nav mostrará una columna vertical si se desea */
-            .main-nav.open ul { flex-direction:column; background:rgba(0,0,0,0.04); padding:8px; border-radius:8px; }
-            .main-nav.open ul li { width:100%; }
-            .main-nav.open .dropdown-content { display:block; position:static; background:transparent; box-shadow:none; padding-left:8px; }
-        }
-    </style>
 </head>
 <body>
     <header>
-        <div class="header-inner">
-            <a href="../mapa-del-sitio/inicio.html" class="logo">Portal Diseño Web</a>
+        <div class="header-inner container" role="banner">
+            <a class="logo" href="inicio.html">
+                <img src="portal logo.jpg" alt="Portal logo">
+                <span>Portal</span>
+            </a>
 
-            <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            <!-- Reemplaza el link existente en el nav con esto -->
+            <nav role="navigation" aria-label="Principal">
+        <a href="/portal-consulting/src/mapa-del-sitio/inicio.html">Inicio</a>
 
-            <nav class="main-nav" aria-label="Navegación principal">
-                <ul>
-                    <li><a href="../mapa-del-sitio/inicio.html">Inicio</a></li>
-                    <li><a href="../mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegir Portal?</a></li>
+        <div class="dropdown" id="dropdown-why">
+            <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
+                ¿Por qué Portal? <span class="arrow">▾</span>
+            </button>
+            <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
+                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegirnos?</a>
+                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a>
+            </div>
+        </div>
 
-                    <li class="dropdown">
-                        <span class="dropdown-trigger" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">Servicios <span class="arrow">▾</span></span>
-                        <div class="dropdown-content" role="menu" aria-label="Servicios">
-                            <a href="diseno-web.html">Diseño de Páginas Web</a>
-                            <a href="web-adaptativas.html">Páginas Web Adaptativas</a>
-                            <a href="web-autoadministrables.html">Páginas Web Autoadministrables</a>
-                            <a href="hosting.html">Hosting</a>
-                            <a href="actualizacion-web.html">Actualización de páginas web</a>
-                        </div>
-                    </li>
-
-                    <li><a href="../mapa-del-sitio/portfolio.html">Portfolio</a></li>
-                    <li><a href="../mapa-del-sitio/clientes.html">Clientes</a></li>
-                    <li><a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones</a></li>
-                    <li><a href="../mapa-del-sitio/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
-                    <li><a href="../mapa-del-sitio/contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
+        <a href="/portal-consulting/src/mapa-del-sitio/servicios.html">Servicios</a>
+        <a href="/portal-consulting/src/mapa-del-sitio/portfolio.html">Portfolio</a>
+        <a href="/portal-consulting/src/mapa-del-sitio/clientes.html">Clientes</a>
+        <a href="/portal-consulting/src/mapa-del-sitio/opiniones-cliente.html">Opiniones</a>
+        <a href="/portal-consulting/src/mapa-del-sitio/contacto.html" class="btn btn--primary">Contacto</a>
+    </nav>
         </div>
     </header>
 

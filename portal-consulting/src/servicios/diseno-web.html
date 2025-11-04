@@ -8,32 +8,33 @@
 </head>
 <body>
     <header>
-        <div class="header-inner">
-            <a href="../mapa-del-sitio/inicio.html" class="logo">Portal Diseño Web</a>
+        <div class="header-inner container" role="banner">
+            <a class="logo" href="inicio.html">
+                <img src="portal logo.jpg" alt="Portal logo">
+                <span>Portal</span>
+            </a>
 
-            <nav>
-                <ul>
-                    <li><a href="../mapa-del-sitio/inicio.html">Inicio</a></li>
-                    <li><a href="../mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegir Portal?</a></li>
+            <!-- Reemplaza el link existente en el nav con esto -->
+            <nav role="navigation" aria-label="Principal">
+        <a href="/portal-consulting/src/mapa-del-sitio/inicio.html">Inicio</a>
 
-                    <li class="dropdown">
-                        <span class="dropdown-trigger" tabindex="0">Servicios <span class="arrow">▾</span></span>
-                        <div class="dropdown-content" role="menu" aria-label="Servicios">
-                            <a href="diseno-web.html">Diseño de Páginas Web</a>
-                            <a href="web-adaptativas.html">Páginas Web Adaptativas</a>
-                            <a href="web-autoadministrables.html">Páginas Web Autoadministrables</a>
-                            <a href="hosting.html">Hosting</a>
-                            <a href="actualizacion-web.html">Actualización de páginas web</a>
-                        </div>
-                    </li>
+        <div class="dropdown" id="dropdown-why">
+            <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
+                ¿Por qué Portal? <span class="arrow">▾</span>
+            </button>
+            <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
+                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegirnos?</a>
+                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a>
+            </div>
+        </div>
 
-                    <li><a href="../mapa-del-sitio/portfolio.html">Portfolio</a></li>
-                    <li><a href="../mapa-del-sitio/clientes.html">Clientes</a></li>
-                    <li><a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones</a></li>
-                    <li><a href="../mapa-del-sitio/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
-                    <li><a href="../mapa-del-sitio/contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
+        <a href="/portal-consulting/src/mapa-del-sitio/servicios.html">Servicios</a>
+        <a href="/portal-consulting/src/mapa-del-sitio/portfolio.html">Portfolio</a>
+        <a href="/portal-consulting/src/mapa-del-sitio/clientes.html">Clientes</a>
+        <a href="/portal-consulting/src/mapa-del-sitio/opiniones-cliente.html">Opiniones</a>
+        <a href="/portal-consulting/src/mapa-del-sitio/contacto.html" class="btn btn--primary">Contacto</a>
+    </nav>
         </div>
     </header>
 
