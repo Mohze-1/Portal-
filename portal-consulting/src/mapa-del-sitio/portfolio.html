@@ -3,48 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Portal</title>
+    <title>Portfolio - Portal Diseño Web y Marketing Digital</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <header>
-        <div class="header-inner">
-            <nav>
-                <ul>
-                    <li><a href="inicio.html">Inicio</a></li>
-                    <li><a href="porque-elegir-portal.html">¿Por qué elegir Portal?</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="clientes.html">Clientes</a></li>
-                    <li><a href="opiniones-cliente.html">Opiniones de cliente</a></li>
-                    <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
+        <div class="header-inner container" role="banner">
+            <a class="logo" href="inicio.html">
+                <img src="logo_106x81.png" alt="Portal logo">
+                <span>Portal</span>
+            </a>
+
+            <nav role="navigation" aria-label="Principal">
+                <a href="inicio.html">Inicio</a>
+
+                <div class="dropdown" id="dropdown-why">
+                    <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
+                        ¿Por qué Portal? <span class="arrow">▾</span>
+                    </button>
+                    <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
+                        <a role="menuitem" href="porque-elegir-portal.html">¿Por qué elegirnos?</a>
+                        <a role="menuitem" href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                        <a role="menuitem" href="opiniones-cliente.html">Opiniones de Clientes</a>
+                    </div>
+                </div>
+
+                <a href="servicios.html">Servicios</a>
+                <a href="portfolio.html" class="active">Portfolio</a>
+                <a href="clientes.html">Clientes</a>
+                <a href="opiniones-cliente.html">Opiniones</a>
+                <a href="contacto.html" class="btn btn--primary">Contacto</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section>
-            <h2>Nuestros Proyectos</h2>
-            <p>A continuación, se presenta una selección de nuestros proyectos anteriores que destacan nuestra experiencia y habilidades en consultoría.</p>
-            <ul>
-                <li>
-                    <h3>Proyecto 1</h3>
-                    <p>Descripción breve del proyecto 1.</p>
-                </li>
-                <li>
-                    <h3>Proyecto 2</h3>
-                    <p>Descripción breve del proyecto 2.</p>
-                </li>
-                <li>
-                    <h3>Proyecto 3</h3>
-                    <p>Descripción breve del proyecto 3.</p>
-                </li>
+        <!-- Hero Section -->
+        <section class="hero-main container fade-up">
+            <div class="hero-content">
+                <span class="kicker">Nuestros Trabajos</span>
+                <h1>Portfolio de Proyectos</h1>
+                <p>Descubre cómo ayudamos a nuestros clientes a alcanzar sus objetivos digitales</p>
+            </div>
+        </section>
+
+        <!-- Portfolio Grid -->
+        <section class="container">
+            <div class="portfolio-filters fade-up">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="web">Diseño Web</button>
+                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                <button class="filter-btn" data-filter="marketing">Marketing Digital</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Proyecto 1 -->
+                <div class="portfolio-item fade-up" data-category="web">
+                    <img src="../assets/portfolio/proyecto1.jpg" alt="Proyecto 1">
+                    <div class="portfolio-overlay">
+                        <h3>Inmobiliaria Premium</h3>
+                        <p>Diseño Web Responsive</p>
+                        <a href="#" class="btn btn--ghost">Ver Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="portfolio-item fade-up" data-category="ecommerce">
+                    <img src="../assets/portfolio/proyecto2.jpg" alt="Proyecto 2">
+                    <div class="portfolio-overlay">
+                        <h3>TechStore</h3>
+                        <p>E-commerce</p>
+                        <a href="#" class="btn btn--ghost">Ver Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="portfolio-item fade-up" data-category="marketing">
+                    <img src="../assets/portfolio/proyecto3.jpg" alt="Proyecto 3">
+                    <div class="portfolio-overlay">
+                        <h3>Campaña Digital</h3>
+                        <p>Marketing Digital</p>
+                        <a href="#" class="btn btn--ghost">Ver Proyecto</a>
+                    </div>
+                </div>
+
                 <!-- Agregar más proyectos según sea necesario -->
-            </ul>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section container">
+            <div class="cta-box fade-up">
+                <h2>¿Listo para crear tu próximo proyecto?</h2>
+                <p>Conversemos sobre cómo podemos ayudarte a alcanzar tus objetivos</p>
+                <a href="contacto.html" class="btn btn--primary">Contactar ahora</a>
+            </div>
         </section>
     </main>
+
     <footer class="footer-dark">
         <div class="container">
             <div class="footer-columns">
@@ -97,5 +153,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="../js/main.js"></script>
 </body>
 </html>

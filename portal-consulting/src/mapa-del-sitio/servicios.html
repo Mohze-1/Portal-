@@ -3,34 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios - Portal</title>
+    <title>Servicios - Portal Diseño Web y Marketing Digital</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <header>
-        <h1>Servicios de Portal</h1>
-        <nav>
-            <ul>
-                <li><a href="inicio.html">Inicio</a></li>
-                <li><a href="porque-elegir-portal.html">Porqué elegir Portal?</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="clientes.html">Clientes</a></li>
-                <li><a href="opiniones-cliente.html">Opiniones de cliente</a></li>
-                <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="header-inner container" role="banner">
+            <a class="logo" href="inicio.html">
+                <img src="logo_106x81.png" alt="Portal logo">
+                <span>Portal</span>
+            </a>
+
+            <nav role="navigation" aria-label="Principal">
+                <a href="inicio.html">Inicio</a>
+
+                <div class="dropdown" id="dropdown-why">
+                    <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
+                        ¿Por qué Portal? <span class="arrow">▾</span>
+                    </button>
+                    <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
+                        <a role="menuitem" href="porque-elegir-portal.html">¿Por qué elegirnos?</a>
+                        <a role="menuitem" href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                        <a role="menuitem" href="opiniones-cliente.html">Opiniones de Clientes</a>
+                    </div>
+                </div>
+
+                <a href="servicios.html" class="active">Servicios</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="clientes.html">Clientes</a>
+                <a href="opiniones-cliente.html">Opiniones</a>
+                <a href="contacto.html" class="btn btn--primary">Contacto</a>
+            </nav>
+        </div>
     </header>
+
     <main>
-        <h2>Nuestros Servicios</h2>
-        <ul>
-            <li><a href="../servicios/diseno-web.html">Diseño de páginas web</a></li>
-            <li><a href="../servicios/web-adaptativas.html">Páginas web adaptativas</a></li>
-            <li><a href="../servicios/web-autoadministrables.html">Páginas web autoadministrables</a></li>
-            <li><a href="../servicios/hosting.html">Hosting</a></li>
-            <li><a href="../servicios/actualizacion-web.html">Actualización de páginas web</a></li>
-        </ul>
+        <!-- Hero Section -->
+        <section class="hero-main container fade-up">
+            <div class="hero-content">
+                <span class="kicker">Servicios Profesionales</span>
+                <h1>Soluciones Digitales Integrales</h1>
+                <p>Ofrecemos un conjunto completo de servicios diseñados para potenciar tu presencia online y maximizar el retorno de tu inversión digital.</p>
+            </div>
+        </section>
+
+        <!-- Quiénes Somos Section -->
+        <section class="container">
+            <div class="content-block fade-up">
+                <h2>Quiénes Somos</h2>
+                <p>En Portal, somos un equipo de profesionales apasionados por el diseño web y el marketing digital, con más de 13 años de experiencia creando soluciones efectivas para empresas de todos los tamaños. Nuestra misión es ayudar a las empresas a destacar en el mundo digital mediante estrategias personalizadas y tecnología de vanguardia.</p>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="card fade-up">
+                    <div class="card-icon">
+                        <img src="../assets/icons/web.svg" alt="Diseño web">
+                    </div>
+                    <h3>Diseño Web</h3>
+                    <p>Sitios web profesionales optimizados para resultados y conversiones</p>
+                    <a href="../servicios/diseno-web.html" class="card-link">Más info →</a>
+                </div>
+
+                <div class="card fade-up">
+                    <div class="card-icon">
+                        <img src="../assets/icons/responsive.svg" alt="Diseño responsive">
+                    </div>
+                    <h3>Diseño Responsive</h3>
+                    <p>Webs adaptadas perfectamente a todos los dispositivos</p>
+                    <a href="../servicios/web-adaptativas.html" class="card-link">Más info →</a>
+                </div>
+
+                <div class="card fade-up">
+                    <div class="card-icon">
+                        <img src="../assets/icons/cms.svg" alt="CMS">
+                    </div>
+                    <h3>Web Autoadministrable</h3>
+                    <p>Control total sobre el contenido de tu sitio</p>
+                    <a href="../servicios/web-autoadministrables.html" class="card-link">Más info →</a>
+                </div>
+
+                <div class="card fade-up">
+                    <div class="card-icon">
+                        <img src="../assets/icons/hosting.svg" alt="Hosting">
+                    </div>
+                    <h3>Hosting</h3>
+                    <p>Alojamiento web seguro y de alta velocidad</p>
+                    <a href="../servicios/hosting.html" class="card-link">Más info →</a>
+                </div>
+
+                <div class="card fade-up">
+                    <div class="card-icon">
+                        <img src="../assets/icons/update.svg" alt="Actualización">
+                    </div>
+                    <h3>Actualización Web</h3>
+                    <p>Mantén tu sitio actualizado y optimizado</p>
+                    <a href="../servicios/actualizacion-web.html" class="card-link">Más info →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section container">
+            <div class="cta-box fade-up">
+                <h2>¿Necesitas ayuda con tu proyecto?</h2>
+                <p>Agenda una consultoría gratuita y analicemos juntos la mejor solución para tu negocio</p>
+                <a href="contacto.html" class="btn btn--primary">Contactar ahora</a>
+            </div>
+        </section>
     </main>
+
     <footer class="footer-dark">
         <div class="container">
             <div class="footer-columns">
@@ -92,5 +177,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="../js/main.js"></script>
 </body>
 </html>

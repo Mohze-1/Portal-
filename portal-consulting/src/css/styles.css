@@ -13,8 +13,10 @@
     --shadow-md: 0 12px 30px rgba(107,70,193,0.09);
     --transition: 220ms cubic-bezier(.2,.9,.3,1);
 
-    /* HEADER sizing */
-    --header-height: 72px; /* nueva altura del header */
+    /* HEADER sizing: aumentar espacio para que el header no tape contenido ni el logo */
+    --header-height: 96px; /* aumentado para dar más visibilidad al logo */
+
+    --color-orange: #ff9a00; /* color activo / hover naranja */
 }
 
 /* make room for fixed header */
@@ -40,9 +42,6 @@ body {
 }
 
 /* Header / Nav (reemplaza la regla header existente) */
-:root {
-    --header-height: 72px; /* nueva altura del header */
-}
 
 /* reservar espacio para header fijo */
 body {
@@ -68,10 +67,12 @@ header {
     margin: 0 auto;
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: center; /* mantener centrado verticalmente */
     justify-content: space-between;
     gap: 16px;
     padding: 0 16px;
+    padding-top: 10px;    /* pequeño empuje hacia abajo para mayor separación visual */
+    padding-bottom: 10px;
 }
 
 /* Logo textual */
@@ -85,89 +86,323 @@ header {
     gap: 12px;
 }
 
+/* Imagen del logo: tamaño controlado y no se cortará */
+.logo img {
+    height: 150px;         /* aumentar la altura visible del logo */
+    width: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 10px;   /* opcional, suaviza si hay fondo */
+}
+
+/* Aumentar separación del texto del logo para mejorar legibilidad */
+.logo span {
+    font-size: 1rem;
+    line-height: 1;
+    color: #fff;
+}
+
 /* Nav layout: horizontal, no wrapping */
-nav {
+nav, .main-nav {
     display: flex;
     gap: 8px;
     align-items: center;
-    justify-content: flex-end;
     white-space: nowrap;
 }
 
-/* Nav links */
-nav a, .dropdown-trigger {
-    color: rgba(255,255,255,0.95);
+/* Nav item base: letras blancas y fondo negro (píldora) */
+nav a,
+.main-nav a,
+nav .dropdown-trigger,
+.main-nav .dropdown-trigger {
+    color: #fff;
+    background: #000;
     text-decoration: none;
     padding: 8px 12px;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: 600;
     font-size: 0.95rem;
-    transition: background 160ms ease, color 160ms ease;
+    transition: background 180ms ease, color 180ms ease, transform 120ms ease;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-}
-nav a:hover, nav a:focus, .dropdown-trigger:hover, .dropdown-trigger:focus {
-    background: rgba(255,255,255,0.06);
-    outline: none;
+    gap: 8px;
 }
 
-/* Dropdown container */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Arrow rotation on open/hover */
-.dropdown-trigger .arrow {
-    font-size: 0.8em;
-    transition: transform 0.2s ease;
-}
-.dropdown:hover .arrow,
-.dropdown:focus-within .arrow {
-    transform: rotate(180deg);
-}
-
-/* Dropdown panel (desktop) */
-.dropdown-content {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-    background: #000;
-    min-width: 220px;
-    border-radius: 8px;
-    padding: 6px 0;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-8px);
-    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
-    z-index: 40;
-}
-
-/* Show dropdown on hover or keyboard focus */
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px 16px;
+/* Hover y foco: naranja */
+nav a:hover,
+nav a:focus,
+.main-nav a:hover,
+.main-nav a:focus,
+.dropdown-trigger:hover,
+.dropdown-trigger:focus,
+.dropdown-trigger.active {
+    background: var(--color-orange);
     color: #fff;
-    text-decoration: none;
-    font-size: 0.95rem;
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255,154,0,0.12);
+}
+
+/* Estado activo (cuando estás en esa página) */
+nav a.active,
+.main-nav a.active {
+    background: var(--color-orange);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(255,154,0,0.12);
+}
+
+/* Dropdown panel links keep same behaviour */
+.dropdown-content a,
+.dropdown-panel a {
+    color: #fff;
+    background: #000;
+    padding: 10px 14px;
+    display: block;
+    border-radius: 8px;
+    margin: 4px 8px;
 }
 .dropdown-content a:hover,
-.dropdown-content a:focus {
-    background: rgba(255,255,255,0.06);
-    outline: none;
+.dropdown-panel a:hover,
+.dropdown-content a:focus,
+.dropdown-panel a:focus {
+    background: var(--color-orange);
+    color: #fff;
 }
 
-/* Accessibility: allow opening with Enter/Space when trigger has tabindex */
-.dropdown-trigger[tabindex] { cursor: pointer; }
+/* Ensure dropdown-trigger shows active when one of its children is active */
+.dropdown-trigger.active {
+    background: var(--color-orange);
+    color: #fff;
+}
+
+/* Header / Nav — reemplazar/añadir estas reglas para comportamiento activo/hover */
+nav, .main-nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* Nav item base: letras blancas y fondo negro (píldora) */
+nav a,
+.main-nav a,
+nav .dropdown-trigger,
+.main-nav .dropdown-trigger {
+    color: #fff;
+    background: #000;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 180ms ease, color 180ms ease, transform 120ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Hover y foco: naranja */
+nav a:hover,
+nav a:focus,
+.main-nav a:hover,
+.main-nav a:focus,
+.dropdown-trigger:hover,
+.dropdown-trigger:focus,
+.dropdown-trigger.active {
+    background: var(--color-orange);
+    color: #fff;
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255,154,0,0.12);
+}
+
+/* Estado activo (cuando estás en esa página) */
+nav a.active,
+.main-nav a.active {
+    background: var(--color-orange);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(255,154,0,0.12);
+}
+
+/* Dropdown panel links keep same behaviour */
+.dropdown-content a,
+.dropdown-panel a {
+    color: #fff;
+    background: #000;
+    padding: 10px 14px;
+    display: block;
+    border-radius: 8px;
+    margin: 4px 8px;
+}
+.dropdown-content a:hover,
+.dropdown-panel a:hover,
+.dropdown-content a:focus,
+.dropdown-panel a:focus {
+    background: var(--color-orange);
+    color: #fff;
+}
+
+/* Ensure dropdown-trigger shows active when one of its children is active */
+.dropdown-trigger.active {
+    background: var(--color-orange);
+    color: #fff;
+}
+
+/* make room for fixed header */
+body {
+    font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #f8f6fb 0%, #eef2f6 100%);
+    color: var(--color-heading);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.6;
+    font-size:16px;
+    padding-top: var(--header-height);
+}
+
+/* Layout */
+.container {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+    padding: 2rem 0;
+    position: relative;
+}
+
+/* Header / Nav (reemplaza la regla header existente) */
+
+/* reservar espacio para header fijo */
+body {
+    padding-top: var(--header-height);
+}
+
+/* Header fijo, fondo oscuro y legible */
+header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: var(--header-height);
+    background: #000;
+    color: #fff;
+    z-index: 9999;
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(6px);
+    display: block;
+    transition: transform 260ms var(--transition), visibility 260ms var(--transition);
+}
+
+.header-inner {
+    width: min(1200px, 95%);
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center; /* mantener centrado verticalmente */
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 16px;
+    padding-top: 10px;    /* pequeño empuje hacia abajo para mayor separación visual */
+    padding-bottom: 10px;
+}
+
+/* Logo textual */
+.logo {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Imagen del logo: tamaño controlado y no se cortará */
+.logo img {
+    height: 150px;         /* aumentar la altura visible del logo */
+    width: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 10px;   /* opcional, suaviza si hay fondo */
+}
+
+/* Aumentar separación del texto del logo para mejorar legibilidad */
+.logo span {
+    font-size: 1rem;
+    line-height: 1;
+    color: #fff;
+}
+
+/* Nav layout: horizontal, no wrapping */
+nav, .main-nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* Nav item base: letras blancas y fondo negro (píldora) */
+nav a,
+.main-nav a,
+nav .dropdown-trigger,
+.main-nav .dropdown-trigger {
+    color: #fff;
+    background: #000;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 180ms ease, color 180ms ease, transform 120ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Hover y foco: naranja */
+nav a:hover,
+nav a:focus,
+.main-nav a:hover,
+.main-nav a:focus,
+.dropdown-trigger:hover,
+.dropdown-trigger:focus,
+.dropdown-trigger.active {
+    background: var(--color-orange);
+    color: #fff;
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255,154,0,0.12);
+}
+
+/* Estado activo (cuando estás en esa página) */
+nav a.active,
+.main-nav a.active {
+    background: var(--color-orange);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(255,154,0,0.12);
+}
+
+/* Dropdown panel links keep same behaviour */
+.dropdown-content a,
+.dropdown-panel a {
+    color: #fff;
+    background: #000;
+    padding: 10px 14px;
+    display: block;
+    border-radius: 8px;
+    margin: 4px 8px;
+}
+.dropdown-content a:hover,
+.dropdown-panel a:hover,
+.dropdown-content a:focus,
+.dropdown-panel a:focus {
+    background: var(--color-orange);
+    color: #fff;
+}
+
+/* Ensure dropdown-trigger shows active when one of its children is active */
+.dropdown-trigger.active {
+    background: var(--color-orange);
+    color: #fff;
+}
 
 /* Mobile / small screens: keep nav visible as horizontal scroller */
 @media (max-width: 768px) {
@@ -177,7 +412,7 @@ nav a:hover, nav a:focus, .dropdown-trigger:hover, .dropdown-trigger:focus {
     .header-inner { padding: 0 12px; }
 
     /* Nav becomes horizontally scrollable */
-    nav {
+    nav, .main-nav {
         display: flex;
         gap: 8px;
         align-items: center;
@@ -376,24 +611,84 @@ nav a:hover, nav a:focus, .dropdown-trigger:hover, .dropdown-trigger:focus {
     font-size: 1.1rem;
 }
 
+/* Portfolio filters */
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
 /* Portfolio grid */
-.portfolio-grid{
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
-    gap:16px;
-    margin-top:18px;
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
 }
-.portfolio-item{
-    border-radius:10px;
-    overflow:hidden;
-    position:relative;
-    background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01));
+
+.portfolio-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
-.portfolio-item img{ width:100%; height:200px; object-fit:cover; display:block }
-.portfolio-overlay{
-    position:absolute; inset:0; display:flex; align-items:flex-end; padding:12px;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.35));
-    color:#fff;
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 2rem;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-overlay h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.portfolio-overlay p {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    opacity: 0.9;
 }
 
 /* Form styling (soporte tecnico / contacto) */
@@ -793,4 +1088,269 @@ header {
     :root { --header-height: 60px; }
     .logo img { height: 40px; }
     body { padding-top: var(--header-height); }
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-trigger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Process steps grid */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.process-step {
+    text-align: center;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.content-block {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.content-block p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Testimonials Section */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.testimonial-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.client-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.client-info {
+    flex: 1;
+}
+
+.client-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.company {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.rating {
+    color: #ffd700;
+    font-size: 1.1rem;
+}
+
+blockquote {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    font-style: italic;
+}
+
+/* Stats Section */
+.stats-section {
+    background: var(--primary-color);
+    padding: 4rem 0;
+    color: white;
+    margin: 4rem 0;
+    border-radius: 12px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.stat-item p {
+    margin: 0.5rem 0 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 4rem 0;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.faq-category {
+    margin-bottom: 2rem;
+}
+
+.faq-category h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.accordion-item {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.accordion-trigger {
+    width: 100%;
+    padding: 1.5rem;
+    background: #fff;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-trigger:hover {
+    background-color: #f5f5f5;
+}
+
+.accordion-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.accordion-trigger[aria-expanded="true"] .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.accordion-trigger[aria-expanded="true"] + .accordion-content {
+    padding: 1.5rem;
+    max-height: 500px;
+}
+
+.accordion-content p {
+    margin: 0 0 1rem;
+    line-height: 1.6;
+}
+
+.accordion-content ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.accordion-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
 }

@@ -8,25 +8,123 @@
 </head>
 <body>
     <header>
-        <h1>Opiniones de Clientes</h1>
+        <div class="header-inner container" role="banner">
+            <a class="logo" href="inicio.html">
+                <img src="logo_106x81.png" alt="Portal logo">
+                <span>Portal</span>
+            </a>
+
+            <nav role="navigation" aria-label="Principal">
+                <a href="inicio.html">Inicio</a>
+
+                <div class="dropdown" id="dropdown-why">
+                    <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
+                        ¿Por qué Portal? <span class="arrow">▾</span>
+                    </button>
+                    <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
+                        <a role="menuitem" href="porque-elegir-portal.html">¿Por qué elegirnos?</a>
+                        <a role="menuitem" href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                        <a role="menuitem" href="opiniones-cliente.html">Opiniones de Clientes</a>
+                    </div>
+                </div>
+
+                <a href="servicios.html">Servicios</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="clientes.html">Clientes</a>
+                <a href="opiniones-cliente.html" class="active">Opiniones</a>
+                <a href="contacto.html" class="btn btn--primary">Contacto</a>
+            </nav>
+        </div>
     </header>
+
     <main>
-        <section>
-            <h2>Testimonios</h2>
-            <article>
-                <h3>Cliente 1</h3>
-                <p>"El servicio de Portal ha superado mis expectativas. Su atención al detalle y profesionalismo son excepcionales."</p>
-            </article>
-            <article>
-                <h3>Cliente 2</h3>
-                <p>"Gracias a Portal, mi negocio ha crecido significativamente. Su enfoque en resultados es realmente efectivo."</p>
-            </article>
-            <article>
-                <h3>Cliente 3</h3>
-                <p>"Recomiendo Portal a cualquier empresa que busque mejorar su presencia en línea. Son los mejores en lo que hacen."</p>
-            </article>
+        <!-- Hero Section -->
+        <section class="hero-main container fade-up">
+            <div class="hero-content">
+                <span class="kicker">Testimonios</span>
+                <h1>Lo que dicen nuestros clientes</h1>
+                <p>Descubre por qué más de 500 empresas confían en Portal para sus proyectos digitales</p>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section container">
+            <div class="testimonials-grid">
+                <!-- Testimonio 1 -->
+                <div class="testimonial-card fade-up">
+                    <div class="testimonial-header">
+                        <img src="../assets/testimonials/client1.jpg" alt="Juan Pérez" class="client-image">
+                        <div class="client-info">
+                            <h3>Juan Pérez</h3>
+                            <p class="company">CEO - TechStore</p>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
+                    <blockquote>
+                        "Portal transformó completamente nuestra presencia online. Las ventas aumentaron un 200% desde el lanzamiento de nuestra nueva web. Su equipo es increíblemente profesional y dedicado."
+                    </blockquote>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="testimonial-card fade-up">
+                    <div class="testimonial-header">
+                        <img src="../assets/testimonials/client2.jpg" alt="María González" class="client-image">
+                        <div class="client-info">
+                            <h3>María González</h3>
+                            <p class="company">Directora - Inmobiliaria Premium</p>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
+                    <blockquote>
+                        "Excelente atención y resultados. Nuestra web ahora genera leads constantemente y el diseño es exactamente lo que buscábamos. ¡Superaron todas nuestras expectativas!"
+                    </blockquote>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="testimonial-card fade-up">
+                    <div class="testimonial-header">
+                        <img src="../assets/testimonials/client3.jpg" alt="Carlos Rodríguez" class="client-image">
+                        <div class="client-info">
+                            <h3>Carlos Rodríguez</h3>
+                            <p class="company">Fundador - FitLife</p>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                    </div>
+                    <blockquote>
+                        "El equipo de Portal entendió perfectamente nuestras necesidades. El proceso fue muy profesional y el resultado final superó nuestras expectativas. Totalmente recomendados."
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section container fade-up">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Clientes Satisfechos</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Tasa de Satisfacción</p>
+                </div>
+                <div class="stat-item">
+                    <h3>13</h3>
+                    <p>Años de Experiencia</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section container">
+            <div class="cta-box fade-up">
+                <h2>¿Listo para ser nuestro próximo caso de éxito?</h2>
+                <p>Conversemos sobre cómo podemos ayudarte a alcanzar tus objetivos digitales</p>
+                <a href="contacto.html" class="btn btn--primary">Contactar ahora</a>
+            </div>
         </section>
     </main>
+
     <footer class="footer-dark">
         <div class="container">
             <div class="footer-columns">
@@ -88,5 +186,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="../js/main.js"></script>
 </body>
 </html>

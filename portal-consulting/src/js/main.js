@@ -52,3 +52,77 @@
         if (e.key === 'Escape') closeDropdown();
     });
 })();
+
+/* Añade clase .active al link del nav que coincide con el archivo actual.
+   También marca el trigger del dropdown si el link está dentro de un dropdown. */
+(function markActiveNavItem(){
+    try {
+        const currentFile = (location.pathname.split('/').pop() || 'inicio.html').toLowerCase();
+        document.querySelectorAll('nav a').forEach(a => {
+            const href = a.getAttribute('href') || '';
+            const linkFile = href.split('/').pop().split('?')[0].split('#')[0].toLowerCase();
+            if (!linkFile) return;
+            if (linkFile === currentFile) {
+                a.classList.add('active');
+                // si está dentro de un dropdown, marcar el trigger también
+                const dropdownPanel = a.closest('.dropdown-content, .dropdown-panel');
+                if (dropdownPanel) {
+                    const parent = dropdownPanel.closest('.dropdown, .has-dropdown');
+                    if (parent) {
+                        const trigger = parent.querySelector('.dropdown-trigger');
+                        trigger && trigger.classList.add('active');
+                    }
+                }
+            }
+        });
+    } catch (e) {
+        // silencioso en caso de error
+        console.warn('markActiveNavItem error', e);
+    }
+})();
+
+// Portfolio Filters
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            portfolioItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+
+// FAQ Accordion
+document.addEventListener('DOMContentLoaded', function() {
+    const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+    
+    accordionTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+            
+            // Close all other accordion items
+            accordionTriggers.forEach(otherTrigger => {
+                if (otherTrigger !== trigger) {
+                    otherTrigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            // Toggle current accordion item
+            trigger.setAttribute('aria-expanded', !isExpanded);
+        });
+    });
+});

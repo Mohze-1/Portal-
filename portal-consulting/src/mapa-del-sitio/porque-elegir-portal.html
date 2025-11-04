@@ -3,25 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Por qué elegir Portal?</title>
+    <title>¿Por qué elegir Portal? - Expertos en Diseño Web y Marketing Digital</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <header>
-        <h1>¿Por qué elegir Portal?</h1>
+        <div class="header-inner container" role="banner">
+            <a class="logo" href="inicio.html">
+                <img src="logo_106x81.png" alt="Portal logo">
+                <span>Portal</span>
+            </a>
+
+            <nav role="navigation" aria-label="Principal">
+                <a href="inicio.html">Inicio</a>
+
+                <div class="dropdown" id="dropdown-why">
+                    <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
+                        ¿Por qué Portal? <span class="arrow">▾</span>
+                    </button>
+                    <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
+                        <a role="menuitem" href="porque-elegir-portal.html">¿Por qué elegirnos?</a>
+                        <a role="menuitem" href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                        <a role="menuitem" href="opiniones-cliente.html">Opiniones de Clientes</a>
+                    </div>
+                </div>
+
+                <a href="servicios.html">Servicios</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="clientes.html">Clientes</a>
+                <a href="opiniones-cliente.html">Opiniones</a>
+                <a href="contacto.html" class="btn btn--primary">Contacto</a>
+            </nav>
+        </div>
     </header>
+
     <main>
-        <section>
-            <h2>Razones para elegirnos</h2>
-            <ul>
-                <li><strong>Experiencia:</strong> Contamos con un equipo de expertos en consultoría.</li>
-                <li><strong>Enfoque en resultados:</strong> Nos centramos en lograr resultados tangibles para nuestros clientes.</li>
-                <li><strong>Soluciones personalizadas:</strong> Ofrecemos servicios adaptados a las necesidades específicas de cada cliente.</li>
-                <li><strong>Soporte continuo:</strong> Brindamos asistencia y soporte a lo largo de todo el proceso.</li>
-                <li><strong>Testimonios positivos:</strong> Nuestros clientes satisfechos son nuestra mejor carta de presentación.</li>
-            </ul>
+        <!-- Hero Section -->
+        <section class="hero-main container fade-up">
+            <div class="hero-content">
+                <span class="kicker">Nuestra Historia</span>
+                <h1>¿Por qué elegir Portal?</h1>
+                <p>Más de una década transformando ideas en experiencias digitales exitosas</p>
+            </div>
+        </section>
+
+        <!-- Quienes Somos Section -->
+        <section class="container">
+            <div class="content-block fade-up">
+                <h2>Quiénes Somos</h2>
+                <p>Portal nació en 2010 con una misión clara: ayudar a empresas y emprendedores a destacar en el mundo digital. Nos especializamos en crear soluciones web que no solo lucen profesionales, sino que también generan resultados tangibles para nuestros clientes.</p>
+            </div>
+        </section>
+
+        <!-- Razones para elegirnos -->
+        <section class="container">
+            <h2 class="section-title">Razones para Elegirnos</h2>
+            <div class="services-grid">
+                <div class="card fade-up">
+                    <div class="card-icon">
+                        <img src="../assets/icons/experience.svg" alt="Experiencia">
+                    </div>
+                    <h3>Experiencia Comprobada</h3>
+                    <p>+500 proyectos exitosos y más de 10 años en el mercado digital.</p>
+                </div>
+
+                <div class="card fade-up">
+                    <div class="card-icon">
+                        <img src="../assets/icons/results.svg" alt="Resultados">
+                    </div>
+                    <h3>Enfoque en Resultados</h3>
+                    <p>Estrategias orientadas a maximizar el retorno de inversión de nuestros clientes.</p>
+                </div>
+
+                <div class="card fade-up">
+                    <div class="card-icon">
+                        <img src="../assets/icons/support.svg" alt="Soporte">
+                    </div>
+                    <h3>Soporte Premium</h3>
+                    <p>Atención personalizada y soporte técnico disponible 24/7.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nuestro Proceso -->
+        <section class="container">
+            <h2 class="section-title">Nuestro Proceso de Trabajo</h2>
+            <div class="process-grid">
+                <div class="process-step fade-up">
+                    <span class="step-number">1</span>
+                    <h3>Análisis</h3>
+                    <p>Estudiamos tus necesidades y objetivos para proponer la mejor solución.</p>
+                </div>
+                <div class="process-step fade-up">
+                    <span class="step-number">2</span>
+                    <h3>Planificación</h3>
+                    <p>Desarrollamos una estrategia personalizada para tu proyecto.</p>
+                </div>
+                <div class="process-step fade-up">
+                    <span class="step-number">3</span>
+                    <h3>Ejecución</h3>
+                    <p>Implementamos las soluciones con los más altos estándares de calidad.</p>
+                </div>
+                <div class="process-step fade-up">
+                    <span class="step-number">4</span>
+                    <h3>Seguimiento</h3>
+                    <p>Monitoreamos y optimizamos continuamente los resultados.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section container">
+            <div class="cta-box fade-up">
+                <h2>¿Listo para dar el siguiente paso?</h2>
+                <p>Conversemos sobre cómo podemos ayudarte a alcanzar tus objetivos digitales</p>
+                <a href="contacto.html" class="btn btn--primary">Contactar ahora</a>
+            </div>
         </section>
     </main>
+
     <footer class="footer-dark">
         <div class="container">
             <div class="footer-columns">
@@ -83,5 +183,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="../js/main.js"></script>
 </body>
 </html>
