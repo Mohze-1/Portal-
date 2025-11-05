@@ -9,70 +9,122 @@
 <body>
     <header>
         <div class="header-inner container" role="banner">
-            <a class="logo" href="inicio.html">
-                <img src="portal logo.jpg" alt="Portal logo">
+            <a class="logo" href="../mapa-del-sitio/inicio.html">
+                <img src="../assets/logo_106x81.png" alt="Portal logo">
                 <span>Portal</span>
             </a>
 
-            <!-- Reemplaza el link existente en el nav con esto -->
             <nav role="navigation" aria-label="Principal">
-        <a href="/portal-consulting/src/mapa-del-sitio/inicio.html">Inicio</a>
+                <a href="../mapa-del-sitio/inicio.html">Inicio</a>
 
-        <div class="dropdown" id="dropdown-why">
-            <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
-                ¿Por qué Portal? <span class="arrow">▾</span>
-            </button>
-            <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
-                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegirnos?</a>
-                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a>
-                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a>
-            </div>
-        </div>
+                <div class="dropdown" id="dropdown-why">
+                    <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
+                        ¿Por qué Portal? <span class="arrow">▾</span>
+                    </button>
+                    <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
+                        <a role="menuitem" href="../mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegirnos?</a>
+                        <a role="menuitem" href="../mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                        <a role="menuitem" href="../mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a>
+                    </div>
+                </div>
 
-        <a href="/portal-consulting/src/mapa-del-sitio/servicios.html">Servicios</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/portfolio.html">Portfolio</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/clientes.html">Clientes</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/opiniones-cliente.html">Opiniones</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/contacto.html" class="btn btn--primary">Contacto</a>
-    </nav>
+                <div class="dropdown" id="dropdown-services">
+                    <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-services">
+                        Servicios <span class="arrow">▾</span>
+                    </button>
+                    <div id="menu-services" class="dropdown-content" role="menu" aria-hidden="true">
+                        <a role="menuitem" href="../mapa-del-sitio/servicios.html">Resumen de Servicios</a>
+                        <a role="menuitem" href="diseno-web.html">Diseño Web</a>
+                        <a role="menuitem" href="web-adaptativas.html">Web Adaptativas</a>
+                        <a role="menuitem" href="web-autoadministrables.html">Web Autoadministrables</a>
+                        <a role="menuitem" href="hosting.html">Hosting</a>
+                        <a role="menuitem" href="actualizacion-web.html">Actualización de Páginas</a>
+                    </div>
+                </div>
+
+                <a href="../mapa-del-sitio/portfolio.html">Portfolio</a>
+                <a href="../mapa-del-sitio/clientes.html">Clientes</a>
+                <a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones</a>
+                <a href="../mapa-del-sitio/contacto.html" class="btn btn--primary">Contacto</a>
+            </nav>
         </div>
     </header>
 
-    <main class="container">
-        <section>
-            <h1>Actualización de Páginas Web</h1>
-            <p>Ofrecemos servicios de actualización y modernización para sitios existentes. Renovamos diseño, tecnología y rendimiento para que tu web sea segura, rápida y convierta mejor.</p>
+    <main>
+        <section class="hero-main container fade-up">
+            <div class="hero-content">
+                <span class="kicker">Renovación</span>
+                <h1>Actualizamos tu web: diseño, seguridad y rendimiento</h1>
+                <p>Modernizamos presencia online para mejorar velocidad, SEO y conversiones sin perder la identidad de marca.</p>
+                <div class="cta-row">
+                    <a href="../mapa-del-sitio/contacto.html" class="btn btn--primary">Solicitar auditoría</a>
+                    <a href="../mapa-del-sitio/portfolio.html" class="btn btn--ghost">Ver casos</a>
+                </div>
+            </div>
+            <div class="hero-image zoom-in">
+                <img src="../assets/hero-illustration.svg" alt="Actualización web">
+            </div>
+        </section>
 
-            <h2>Qué incluye el servicio</h2>
-            <ul>
-                <li>Rediseño visual y mejora de la experiencia de usuario (UX)</li>
-                <li>Actualización de tecnologías, librerías y frameworks</li>
-                <li>Optimización de rendimiento: images, lazy loading, caché y minificación</li>
-                <li>Hardening de seguridad y revisión de dependencias</li>
-                <li>Migración a entornos modernos y configuración de backups</li>
-                <li>Capacitación breve y documentación para el equipo</li>
-            </ul>
+        <section class="container">
+            <h2 class="section-title">Áreas de intervención</h2>
+            <div class="services-grid">
+                <div class="card fade-up">
+                    <h3>Performance</h3>
+                    <p>Auditoría Core Web Vitals, optimización de assets y configuración de cache y CDN.</p>
+                </div>
+                <div class="card fade-up">
+                    <h3>Seguridad</h3>
+                    <p>Actualización de dependencias, revisión de vulnerabilidades y políticas de backups.</p>
+                </div>
+                <div class="card fade-up">
+                    <h3>SEO técnico</h3>
+                    <p>Mejora de estructura, datos estructurados, sitemap y rendimiento para indexación.</p>
+                </div>
+            </div>
+        </section>
 
-            <h2>Proceso de trabajo</h2>
-            <ol>
-                <li>Auditoría inicial: revisión de estado, rendimiento y seguridad.</li>
-                <li>Propuesta de mejoras con estimación y alcance.</li>
-                <li>Desarrollo en entorno de prueba y validación con el cliente.</li>
-                <li>Despliegue a producción y verificación post-lanzamiento.</li>
-                <li>Soporte y mantenimiento según plan contratado.</li>
-            </ol>
+        <section class="container">
+            <h2 class="section-title">Stack y herramientas comunes</h2>
+            <div class="tech-icons fade-up">
+                <img src="../assets/icons/html.svg" alt="HTML5" class="tech-icon">
+                <img src="../assets/icons/css.svg" alt="CSS3" class="tech-icon">
+                <img src="../assets/icons/js.svg" alt="JavaScript" class="tech-icon">
+                <img src="../assets/icons/php.svg" alt="PHP" class="tech-icon">
+                <img src="../assets/icons/docker.svg" alt="Docker" class="tech-icon">
+            </div>
+            <p class="muted">Intervenimos respetando integraciones existentes y proponiendo mejoras medibles.</p>
+        </section>
 
-            <h2>Planes y precios orientativos</h2>
-            <p>Ofrecemos tres paquetes básicos pensados según tamaño y necesidades:</p>
-            <ul>
-                <li><strong>Básico:</strong> Auditoría y mejoras puntuales — ideal para sitios pequeños.</li>
-                <li><strong>Profesional:</strong> Rediseño parcial, optimización completa y seguridad — recomendado para Pymes.</li>
-                <li><strong>Enterprise:</strong> Migración, integraciones y soporte dedicado — para proyectos con mayor complejidad.</li>
-            </ul>
-            <p>Para cotización exacta solicita una <a href="../mapa-del-sitio/contacto.html">consulta</a> gratuita con nuestro equipo.</p>
+        <section class="container">
+            <h2 class="section-title">Qué ofrecemos según la necesidad</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-up">
+                    <h4>Rediseño parcial</h4>
+                    <p>Maquetación y ajustes visuales para mejorar UX sin rehacer todo el sitio.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <h4>Migración tecnológica</h4>
+                    <p>Cambio de CMS o despliegue a infraestructuras modernas con pruebas automatizadas.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <h4>Mantenimiento continuo</h4>
+                    <p>Planes mensuales con updates, backups y soporte proactivo.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <h4>Optimización para campañas</h4>
+                    <p>Landing pages, tracking y mejoras de conversión para campañas pagas.</p>
+                </div>
+            </div>
+            <p class="muted">Entregamos roadmap con prioridades y métricas objetivo antes de comenzar.</p>
+        </section>
 
-            <h2>Casos de éxito</h2>
-            <p>Hemos ayudado a clientes a reducir el tiempo de carga en un 60% y a mejorar la conversión en un 25% tras la actualización. Podemos mostrarte ejemplos y métricas en la reunión de diagnóstico.</p>
+        <section class="container cta-section">
+            <div class="cta-box fade-up">
+                <h2>Listos para modernizar tu web</h2>
+                <p>Solicitá una auditoría y recibí un plan de mejoras con tiempos y costos estimados.</p>
+                <a href="../mapa-del-sitio/contacto.html" class="btn btn--primary">Solicitar auditoría</a>
+            </div>
         </section>
     </main>
 
@@ -87,7 +139,7 @@
                         <li><a href="../mapa-del-sitio/servicios.html">Servicios</a></li>
                         <li><a href="../mapa-del-sitio/portfolio.html">Portfolio</a></li>
                         <li><a href="../mapa-del-sitio/clientes.html">Clientes</a></li>
-                        <li><a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a></li>
+                        <li><a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones</a></li>
                         <li><a href="../mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
                         <li><a href="../mapa-del-sitio/contacto.html">Contacto</a></li>
                     </ul>
@@ -119,51 +171,18 @@
                 </div>
             </div>
 
+            <div class="footer-badges">
+                <img src="../assets/badges/data-fiscal.png" alt="Data Fiscal" class="badge">
+            </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2023 - 2025 • Portal Diseño Web Argentina • Todos los Derechos Reservados</p>
                 <p>TEL: (011) 15-5139-6514 • Buenos Aires • Argentina</p>
+                <img src="../assets/logo-footer.png" alt="Portal" class="footer-logo">
             </div>
         </div>
     </footer>
 
-    <script>
-        // Toggle nav open on small screens
-        (function(){
-            const navToggle = document.querySelector('.nav-toggle');
-            const mainNav = document.querySelector('.main-nav');
-            navToggle && navToggle.addEventListener('click', () => {
-                const open = mainNav.classList.toggle('open');
-                navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-            });
-
-            // Dropdown: on small screens toggle .open on parent
-            const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
-            dropdownTriggers.forEach(trigger => {
-                trigger.addEventListener('click', (e) => {
-                    const mq = window.matchMedia('(max-width: 768px)');
-                    if (!mq.matches) return; // solo en móvil manejar por click
-                    const parent = trigger.closest('.dropdown');
-                    const isOpen = parent.classList.toggle('open');
-                    trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                    e.stopPropagation();
-                });
-
-                // keyboard activation (Enter / Space)
-                trigger.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        trigger.click();
-                    }
-                });
-            });
-
-            // Cerrar dropdown si se hace click fuera (móvil)
-            document.addEventListener('click', (e) => {
-                document.querySelectorAll('.dropdown.open').forEach(d => {
-                    if (!d.contains(e.target)) d.classList.remove('open');
-                });
-            });
-        })();
-    </script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

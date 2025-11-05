@@ -9,45 +9,122 @@
 <body>
     <header>
         <div class="header-inner container" role="banner">
-            <a class="logo" href="inicio.html">
-                <img src="portal logo.jpg" alt="Portal logo">
+            <a class="logo" href="../mapa-del-sitio/inicio.html">
+                <img src="../assets/logo_106x81.png" alt="Portal logo">
                 <span>Portal</span>
             </a>
 
-            <!-- Reemplaza el link existente en el nav con esto -->
             <nav role="navigation" aria-label="Principal">
-        <a href="/portal-consulting/src/mapa-del-sitio/inicio.html">Inicio</a>
+                <a href="../mapa-del-sitio/inicio.html">Inicio</a>
 
-        <div class="dropdown" id="dropdown-why">
-            <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
-                ¿Por qué Portal? <span class="arrow">▾</span>
-            </button>
-            <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
-                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegirnos?</a>
-                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a>
-                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a>
-            </div>
-        </div>
+                <div class="dropdown" id="dropdown-why">
+                    <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
+                        ¿Por qué Portal? <span class="arrow">▾</span>
+                    </button>
+                    <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
+                        <a role="menuitem" href="../mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegirnos?</a>
+                        <a role="menuitem" href="../mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                        <a role="menuitem" href="../mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a>
+                    </div>
+                </div>
 
-        <a href="/portal-consulting/src/mapa-del-sitio/servicios.html">Servicios</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/portfolio.html">Portfolio</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/clientes.html">Clientes</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/opiniones-cliente.html">Opiniones</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/contacto.html" class="btn btn--primary">Contacto</a>
-    </nav>
+                <div class="dropdown" id="dropdown-services">
+                    <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-services">
+                        Servicios <span class="arrow">▾</span>
+                    </button>
+                    <div id="menu-services" class="dropdown-content" role="menu" aria-hidden="true">
+                        <a role="menuitem" href="../mapa-del-sitio/servicios.html">Resumen de Servicios</a>
+                        <a role="menuitem" href="diseno-web.html">Diseño Web</a>
+                        <a role="menuitem" href="web-adaptativas.html">Web Adaptativas</a>
+                        <a role="menuitem" href="web-autoadministrables.html">Web Autoadministrables</a>
+                        <a role="menuitem" href="hosting.html">Hosting</a>
+                        <a role="menuitem" href="actualizacion-web.html">Actualización de Páginas</a>
+                    </div>
+                </div>
+
+                <a href="../mapa-del-sitio/portfolio.html">Portfolio</a>
+                <a href="../mapa-del-sitio/clientes.html">Clientes</a>
+                <a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones</a>
+                <a href="../mapa-del-sitio/contacto.html" class="btn btn--primary">Contacto</a>
+            </nav>
         </div>
     </header>
 
-    <main class="container">
-        <section>
-            <h1>Páginas Web Adaptativas</h1>
-            <p>Desarrollamos sitios que se adaptan a cualquier dispositivo y tamaño de pantalla. Beneficios:</p>
-            <ul>
-                <li>Mejor experiencia de usuario en móvil y tablet</li>
-                <li>Mayor compatibilidad cross-browser</li>
-                <li>Optimización de imágenes y recursos</li>
-                <li>Diseño centrado en accesibilidad</li>
-            </ul>
+    <main>
+        <section class="hero-main container fade-up">
+            <div class="hero-content">
+                <span class="kicker">Responsive & Performance</span>
+                <h1>Webs que funcionan en cualquier pantalla</h1>
+                <p>Diseño adaptativo pensado para usuarios y velocidad: móviles, tablets y escritorio con la misma experiencia efectiva.</p>
+                <div class="cta-row">
+                    <a href="../mapa-del-sitio/servicios.html" class="btn btn--primary">Ver servicios</a>
+                    <a href="../mapa-del-sitio/contacto.html" class="btn btn--ghost">Cotizar ahora</a>
+                </div>
+            </div>
+            <div class="hero-image zoom-in">
+                <img src="../assets/hero-illustration.svg" alt="Diseño adaptativo">
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Qué entregamos</h2>
+            <div class="services-grid">
+                <div class="card fade-up">
+                    <h3>Diseño mobile-first</h3>
+                    <p>Prototipos y layouts priorizando la experiencia móvil para captar más clientes en dispositivos pequeños.</p>
+                </div>
+                <div class="card fade-up">
+                    <h3>Optimización de recursos</h3>
+                    <p>Imágenes responsivas, lazy-loading y carga condicional de scripts para mejorar Core Web Vitals.</p>
+                </div>
+                <div class="card fade-up">
+                    <h3>Compatibilidad y accesibilidad</h3>
+                    <p>Controles ARIA, contrastes y navegación por teclado para llegar a más usuarios y cumplir estándares.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Tecnologías habituales</h2>
+            <div class="tech-icons fade-up">
+                <img src="../assets/icons/html.svg" alt="HTML5" class="tech-icon" title="HTML5">
+                <img src="../assets/icons/css.svg" alt="CSS3" class="tech-icon" title="CSS3">
+                <img src="../assets/icons/js.svg" alt="JavaScript" class="tech-icon" title="JavaScript">
+                <img src="../assets/icons/react.svg" alt="React" class="tech-icon" title="React">
+                <img src="../assets/icons/vue.svg" alt="Vue" class="tech-icon" title="Vue">
+            </div>
+            <p class="muted">Adaptamos el stack según objetivos: sites estáticos, SPAs o SSR para SEO y rendimiento.</p>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Organizaciones & objetivos</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-up">
+                    <h4>Startups (conversión)</h4>
+                    <p>Landing pages rápidas y funnels móviles para maximizar captación desde anuncios.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <h4>Retail & Local (transaccional)</h4>
+                    <p>Tienda responsive, checkout simplificado y optimización para búsquedas locales.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <h4>ONGs y educación (informacional)</h4>
+                    <p>Accesibilidad y estructuras de contenido para mayor alcance y donaciones.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <h4>Empresas (navegacional)</h4>
+                    <p>Sitios corporativos que comunican servicios, casos y confianza en todos los dispositivos.</p>
+                </div>
+            </div>
+            <p class="muted">Cada proyecto define breakpoints, assets y prioridades para equilibrar UX y SEO.</p>
+        </section>
+
+        <section class="container cta-section">
+            <div class="cta-box fade-up">
+                <h2>¿Querés evaluar tu sitio actual?</h2>
+                <p>Solicitá una auditoría móvil gratuita y te mostramos prioridades de mejora.</p>
+                <a href="../mapa-del-sitio/contacto.html" class="btn btn--primary">Solicitar auditoría</a>
+            </div>
         </section>
     </main>
 
@@ -62,7 +139,7 @@
                         <li><a href="../mapa-del-sitio/servicios.html">Servicios</a></li>
                         <li><a href="../mapa-del-sitio/portfolio.html">Portfolio</a></li>
                         <li><a href="../mapa-del-sitio/clientes.html">Clientes</a></li>
-                        <li><a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a></li>
+                        <li><a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones</a></li>
                         <li><a href="../mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
                         <li><a href="../mapa-del-sitio/contacto.html">Contacto</a></li>
                     </ul>
@@ -94,11 +171,18 @@
                 </div>
             </div>
 
+            <div class="footer-badges">
+                <img src="../assets/badges/data-fiscal.png" alt="Data Fiscal" class="badge">
+            </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2023 - 2025 • Portal Diseño Web Argentina • Todos los Derechos Reservados</p>
                 <p>TEL: (011) 15-5139-6514 • Buenos Aires • Argentina</p>
+                <img src="../assets/logo-footer.png" alt="Portal" class="footer-logo">
             </div>
         </div>
     </footer>
+
+    <script src="../js/main.js"></script>
 </body>
 </html>

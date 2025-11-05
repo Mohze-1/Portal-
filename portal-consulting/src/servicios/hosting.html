@@ -9,55 +9,122 @@
 <body>
     <header>
         <div class="header-inner container" role="banner">
-            <a class="logo" href="inicio.html">
-                <img src="portal logo.jpg" alt="Portal logo">
+            <a class="logo" href="../mapa-del-sitio/inicio.html">
+                <img src="../assets/logo_106x81.png" alt="Portal logo">
                 <span>Portal</span>
             </a>
 
-            <!-- Reemplaza el link existente en el nav con esto -->
             <nav role="navigation" aria-label="Principal">
-        <a href="/portal-consulting/src/mapa-del-sitio/inicio.html">Inicio</a>
+                <a href="../mapa-del-sitio/inicio.html">Inicio</a>
 
-        <div class="dropdown" id="dropdown-why">
-            <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
-                ¿Por qué Portal? <span class="arrow">▾</span>
-            </button>
-            <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
-                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegirnos?</a>
-                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a>
-                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a>
-            </div>
-        </div>
+                <div class="dropdown" id="dropdown-why">
+                    <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
+                        ¿Por qué Portal? <span class="arrow">▾</span>
+                    </button>
+                    <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
+                        <a role="menuitem" href="../mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegirnos?</a>
+                        <a role="menuitem" href="../mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                        <a role="menuitem" href="../mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a>
+                    </div>
+                </div>
 
-        <a href="/portal-consulting/src/mapa-del-sitio/servicios.html">Servicios</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/portfolio.html">Portfolio</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/clientes.html">Clientes</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/opiniones-cliente.html">Opiniones</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/contacto.html" class="btn btn--primary">Contacto</a>
-    </nav>
+                <div class="dropdown" id="dropdown-services">
+                    <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-services">
+                        Servicios <span class="arrow">▾</span>
+                    </button>
+                    <div id="menu-services" class="dropdown-content" role="menu" aria-hidden="true">
+                        <a role="menuitem" href="../mapa-del-sitio/servicios.html">Resumen de Servicios</a>
+                        <a role="menuitem" href="diseno-web.html">Diseño Web</a>
+                        <a role="menuitem" href="web-adaptativas.html">Web Adaptativas</a>
+                        <a role="menuitem" href="web-autoadministrables.html">Web Autoadministrables</a>
+                        <a role="menuitem" href="hosting.html">Hosting</a>
+                        <a role="menuitem" href="actualizacion-web.html">Actualización de Páginas</a>
+                    </div>
+                </div>
+
+                <a href="../mapa-del-sitio/portfolio.html">Portfolio</a>
+                <a href="../mapa-del-sitio/clientes.html">Clientes</a>
+                <a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones</a>
+                <a href="../mapa-del-sitio/contacto.html" class="btn btn--primary">Contacto</a>
+            </nav>
         </div>
     </header>
 
-    <main class="container">
-        <section>
-            <h1>Servicios de Hosting</h1>
-            <p>En Portal, ofrecemos soluciones de hosting confiables y escalables para satisfacer las necesidades de su negocio. Nuestros servicios incluyen:</p>
-            <ul>
-                <li>Hosting compartido y dedicado</li>
-                <li>Soporte técnico 24/7</li>
-                <li>Copias de seguridad automáticas</li>
-                <li>Certificados SSL para mayor seguridad</li>
-                <li>Escalabilidad para crecer con su negocio</li>
-            </ul>
+    <main>
+        <section class="hero-main container fade-up">
+            <div class="hero-content">
+                <span class="kicker">Infraestructura</span>
+                <h1>Hosting seguro y optimizado para tu web</h1>
+                <p>Servicios de hosting gestionado para garantizar uptime, backups y rendimiento constante.</p>
+                <div class="cta-row">
+                    <a href="../mapa-del-sitio/contacto.html" class="btn btn--primary">Solicitar plan</a>
+                    <a href="../mapa-del-sitio/servicios.html" class="btn btn--ghost">Comparar planes</a>
+                </div>
+            </div>
+            <div class="hero-image zoom-in">
+                <img src="../assets/hero-illustration.svg" alt="Hosting confiable">
+            </div>
+        </section>
 
-            <h2>Características del servicio</h2>
-            <p>Nuestro servicio de hosting se destaca por:</p>
-            <ul>
-                <li>Rendimiento optimizado para cargas rápidas</li>
-                <li>Panel de control fácil de usar</li>
-                <li>Instalación con un solo clic de aplicaciones populares</li>
-                <li>Garantía de tiempo de actividad del 99.9%</li>
-            </ul>
+        <section class="container">
+            <h2 class="section-title">Planes y ventajas</h2>
+            <div class="services-grid">
+                <div class="card fade-up">
+                    <h3>Starter</h3>
+                    <p>Ideal para sitios pequeños: SSL, backups diarios y panel de control sencillo.</p>
+                </div>
+                <div class="card fade-up">
+                    <h3>Business</h3>
+                    <p>Recursos dedicados, monitorización proactiva y soporte prioritario.</p>
+                </div>
+                <div class="card fade-up">
+                    <h3>Enterprise</h3>
+                    <p>Escalabilidad, configuración avanzada y SLA personalizado para grandes proyectos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Stack y herramientas</h2>
+            <div class="tech-icons fade-up">
+                <img src="../assets/icons/linux.svg" alt="Linux" class="tech-icon" title="Linux">
+                <img src="../assets/icons/docker.svg" alt="Docker" class="tech-icon" title="Docker">
+                <img src="../assets/icons/nginx.svg" alt="Nginx" class="tech-icon" title="Nginx">
+                <img src="../assets/icons/ssh.svg" alt="SSH" class="tech-icon" title="SSH">
+                <img src="../assets/icons/backup.svg" alt="Backups" class="tech-icon" title="Backups">
+            </div>
+            <p class="muted">Configuraciones optimizadas para CMS populares, tiendas y aplicaciones web.</p>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Escenarios y objetivos</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-up">
+                    <h4>Tiendas online</h4>
+                    <p>Alta disponibilidad y CDNs para soportar picos de tráfico en campañas.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <h4>SaaS y plataformas</h4>
+                    <p>Escalabilidad y aislamiento por contenedores para rendimiento y seguridad.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <h4>Sitios corporativos</h4>
+                    <p>Backups, certificados y soporte para cumplimiento y continuidad de negocio.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <h4>Proyectos multisitio</h4>
+                    <p>Gestión centralizada y despliegues automatizados para redes de sitios.</p>
+                </div>
+            </div>
+            <p class="muted">Te ayudamos a elegir el plan correcto según tráfico, funciones y presupuesto.</p>
+        </section>
+
+        <section class="container cta-section">
+            <div class="cta-box fade-up">
+                <h2>Transferimos tu sitio con cero downtime</h2>
+                <p>Coordinamos migraciones, pruebas y puesta en producción sin interrupciones.</p>
+                <a href="../mapa-del-sitio/contacto.html" class="btn btn--primary">Migrar ahora</a>
+            </div>
         </section>
     </main>
 
@@ -72,7 +139,7 @@
                         <li><a href="../mapa-del-sitio/servicios.html">Servicios</a></li>
                         <li><a href="../mapa-del-sitio/portfolio.html">Portfolio</a></li>
                         <li><a href="../mapa-del-sitio/clientes.html">Clientes</a></li>
-                        <li><a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a></li>
+                        <li><a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones</a></li>
                         <li><a href="../mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
                         <li><a href="../mapa-del-sitio/contacto.html">Contacto</a></li>
                     </ul>
@@ -104,11 +171,18 @@
                 </div>
             </div>
 
+            <div class="footer-badges">
+                <img src="../assets/badges/data-fiscal.png" alt="Data Fiscal" class="badge">
+            </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2023 - 2025 • Portal Diseño Web Argentina • Todos los Derechos Reservados</p>
                 <p>TEL: (011) 15-5139-6514 • Buenos Aires • Argentina</p>
+                <img src="../assets/logo-footer.png" alt="Portal" class="footer-logo">
             </div>
         </div>
     </footer>
+
+    <script src="../js/main.js"></script>
 </body>
 </html>

@@ -17,6 +17,22 @@
     --header-height: 96px; /* aumentado para dar más visibilidad al logo */
 
     --color-orange: #ff9a00; /* color activo / hover naranja */
+
+    /* Estadísticas llamativas: % / clientes / años */
+    --accent-1: #ff6b35;    /* color principal (puedes cambiar) */
+    --accent-2: #ff9a76;    /* degradado secundario */
+    --stat-text: #ffffff;
+    --stat-shadow: rgba(0,0,0,0.12);
+
+    /* Estilos para sección de métricas destacadas */
+    --stat-padding: 1.25rem;
+    --stat-radius: 12px;
+    --accent-1-start: #ff7a18;
+    --accent-1-end: #ff0066;
+    --accent-2-start: #00b4d8;
+    --accent-2-end: #0077b6;
+    --accent-3-start: #7bff6b;
+    --accent-3-end: #10b981;
 }
 
 /* make room for fixed header */
@@ -1214,9 +1230,142 @@ blockquote {
     margin-bottom: 0.5rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .faq-grid {
-        grid-template-columns: 1fr;
-    }
+/* Estadísticas llamativas: % / clientes / años */
+:root{
+    --accent-1: #ff6b35;    /* color principal (puedes cambiar) */
+    --accent-2: #ff9a76;    /* degradado secundario */
+    --stat-text: #ffffff;
+    --stat-shadow: rgba(0,0,0,0.12);
+}
+
+.stats {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: stretch;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.stat {
+    flex: 1 1 160px;
+    min-width: 140px;
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    color: var(--stat-text);
+    padding: 1.15rem 1.25rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 24px var(--stat-shadow);
+    transition: transform .18s ease, box-shadow .18s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* efecto al pasar el cursor */
+.stat:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.18);
+}
+
+.stat-value {
+    font-size: 1.9rem; /* más grande y claro */
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: .5rem;
+    color: var(--stat-text);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    animation: stat-pop .6s cubic-bezier(.2,.9,.3,1);
+}
+
+/* resaltado del porcentaje separado */
+.stat-value .percent {
+    background: rgba(255,255,255,0.12);
+    padding: 0.18rem 0.45rem;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 900;
+}
+
+/* etiqueta debajo (menos dominante) */
+.stat-label {
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
+    opacity: 0.96;
+}
+
+/* animación de entrada */
+@keyframes stat-pop {
+    from { transform: translateY(12px) scale(.98); opacity: 0; }
+    to   { transform: none; opacity: 1; }
+}
+
+/* Responsive: ajustar tamaño en pantallas pequeñas */
+@media (max-width: 560px){
+    .stat-value { font-size: 1.4rem; }
+    .stat { padding: .9rem; border-radius: 10px; }
+}
+
+/* Ajustes para sección de métricas destacadas */
+.stats{
+    display:flex;
+    gap:1rem;
+    justify-content:center;
+    align-items:stretch;
+    margin:2.25rem 0;
+    flex-wrap:wrap;
+}
+
+.stat-card{
+    flex:1 1 220px;
+    padding:var(--stat-padding);
+    border-radius:var(--stat-radius);
+    color:#fff;
+    text-align:center;
+    box-shadow:0 8px 28px rgba(0,0,0,0.12);
+    transition:transform .22s ease, box-shadow .22s ease;
+    min-width:210px;
+    position:relative;
+    overflow:hidden;
+}
+
+.stat-card:hover{ transform:translateY(-8px); box-shadow:0 18px 40px rgba(0,0,0,0.18); }
+
+/* Gradientes distintos por tarjeta para no ser copias exactas */
+.stat-gradient-1{ background: linear-gradient(90deg, var(--accent-1-start), var(--accent-1-end)); }
+.stat-gradient-2{ background: linear-gradient(90deg, var(--accent-2-start), var(--accent-2-end)); }
+.stat-gradient-3{ background: linear-gradient(90deg, var(--accent-3-start), var(--accent-3-end)); }
+
+.stat-value{
+    display:block;
+    font-size:2.25rem;
+    font-weight:800;
+    line-height:1;
+    margin-bottom:.25rem;
+    letter-spacing:0.6px;
+    text-shadow:0 2px 8px rgba(0,0,0,0.18);
+}
+
+.stat-label{
+    display:block;
+    font-size:0.95rem;
+    font-weight:600;
+    opacity:0.98;
+}
+
+.stat-sub{
+    display:block;
+    font-size:0.8rem;
+    margin-top:.45rem;
+    opacity:0.92;
+}
+
+/* Ajustes responsivos */
+@media (max-width:720px){
+    .stats{ gap:.75rem; margin:1.25rem 0; }
+    .stat-value{ font-size:1.6rem; }
 }

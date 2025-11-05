@@ -9,52 +9,148 @@
 <body>
     <header>
         <div class="header-inner container" role="banner">
-            <a class="logo" href="inicio.html">
-                <img src="portal logo.jpg" alt="Portal logo">
+            <a class="logo" href="../mapa-del-sitio/inicio.html">
+                <img src="../assets/logo_106x81.png" alt="Portal logo">
                 <span>Portal</span>
             </a>
 
-            <!-- Reemplaza el link existente en el nav con esto -->
+            <!-- Navegación consistente con inicio.html -->
             <nav role="navigation" aria-label="Principal">
-        <a href="/portal-consulting/src/mapa-del-sitio/inicio.html">Inicio</a>
+                <a href="../mapa-del-sitio/inicio.html">Inicio</a>
 
-        <div class="dropdown" id="dropdown-why">
-            <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
-                ¿Por qué Portal? <span class="arrow">▾</span>
-            </button>
-            <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
-                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegirnos?</a>
-                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a>
-                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a>
-            </div>
-        </div>
+                <div class="dropdown" id="dropdown-why">
+                    <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
+                        ¿Por qué Portal? <span class="arrow">▾</span>
+                    </button>
+                    <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
+                        <a role="menuitem" href="../mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegirnos?</a>
+                        <a role="menuitem" href="../mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                        <a role="menuitem" href="../mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a>
+                    </div>
+                </div>
 
-        <a href="/portal-consulting/src/mapa-del-sitio/servicios.html">Servicios</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/portfolio.html">Portfolio</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/clientes.html">Clientes</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/opiniones-cliente.html">Opiniones</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/contacto.html" class="btn btn--primary">Contacto</a>
-    </nav>
+                <div class="dropdown" id="dropdown-services">
+                    <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-services">
+                        Servicios <span class="arrow">▾</span>
+                    </button>
+                    <div id="menu-services" class="dropdown-content" role="menu" aria-hidden="true">
+                        <a role="menuitem" href="../mapa-del-sitio/servicios.html">Resumen de Servicios</a>
+                        <a role="menuitem" href="diseno-web.html">Diseño Web</a>
+                        <a role="menuitem" href="web-adaptativas.html">Web Adaptativas</a>
+                        <a role="menuitem" href="web-autoadministrables.html">Web Autoadministrables</a>
+                        <a role="menuitem" href="hosting.html">Hosting</a>
+                        <a role="menuitem" href="actualizacion-web.html">Actualización de Páginas</a>
+                    </div>
+                </div>
+
+                <a href="../mapa-del-sitio/portfolio.html">Portfolio</a>
+                <a href="../mapa-del-sitio/clientes.html">Clientes</a>
+                <a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones</a>
+                <a href="../mapa-del-sitio/contacto.html" class="btn btn--primary">Contacto</a>
+            </nav>
         </div>
     </header>
 
-    <main class="container">
-        <section>
-            <h1>Diseño de Páginas Web</h1>
-            <p>Diseñamos sitios web modernos, accesibles y optimizados para conversión. Nuestro proceso incluye:</p>
-            <ul>
-                <li>Análisis y estructura de contenidos</li>
-                <li>Diseño visual y prototipado</li>
-                <li>Implementación responsive</li>
-                <li>Optimización SEO básica</li>
-                <li>Entrega y soporte post-lanzamiento</li>
+    <main>
+        <!-- Hero similar a inicio.html -->
+        <section class="hero-main container fade-up">
+            <div class="hero-content">
+                <span class="kicker">Servicio</span>
+                <h1>Diseño Web profesional: experiencia, conversión y rendimiento</h1>
+                <p>Diseñamos sitios que comunican la propuesta de valor, convierten visitantes y funcionan en todos los dispositivos.</p>
+                <div class="cta-row">
+                    <a href="../mapa-del-sitio/servicios.html" class="btn btn--primary">Ver servicios</a>
+                    <a href="../mapa-del-sitio/contacto.html" class="btn btn--ghost">Solicitar cotización</a>
+                </div>
+            </div>
+            <div class="hero-image zoom-in">
+                <img src="../assets/hero-illustration.svg" alt="Diseño web profesional">
+            </div>
+        </section>
+
+        <!-- Resumen del servicio -->
+        <section class="container">
+            <h2 class="section-title">Qué hacemos en Diseño Web</h2>
+            <div class="services-grid">
+                <div class="card fade-up">
+                    <h3>Diseño y UX</h3>
+                    <p>Arquitectura de la información, prototipos, pruebas de usabilidad y diseño visual orientado a la conversión.</p>
+                </div>
+                <div class="card fade-up">
+                    <h3>Implementación técnica</h3>
+                    <p>HTML semántico, CSS modular, JavaScript optimizado y buenas prácticas de rendimiento y accesibilidad.</p>
+                </div>
+                <div class="card fade-up">
+                    <h3>CMS y Autogestión</h3>
+                    <p>Integración con WordPress, sistemas a medida o soluciones headless según necesidades del cliente.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Iconos de lenguajes y tecnologías -->
+        <section class="container">
+            <h2 class="section-title">Tecnologías y lenguajes con los que trabajamos</h2>
+            <div class="tech-icons fade-up" aria-hidden="false">
+                <img src="../assets/icons/html.svg" alt="HTML5" title="HTML5" class="tech-icon">
+                <img src="../assets/icons/css.svg" alt="CSS3" title="CSS3" class="tech-icon">
+                <img src="../assets/icons/js.svg" alt="JavaScript" title="JavaScript" class="tech-icon">
+                <img src="../assets/icons/php.svg" alt="PHP" title="PHP" class="tech-icon">
+                <img src="../assets/icons/python.svg" alt="Python" title="Python" class="tech-icon">
+                <img src="../assets/icons/wordpress.svg" alt="WordPress" title="WordPress" class="tech-icon">
+            </div>
+            <p class="muted">Si necesitás otro stack (React, Vue, Laravel, Django, etc.) lo adaptamos según el proyecto.</p>
+        </section>
+
+        <!-- Tipos de organizaciones & intenciones de búsqueda -->
+        <section class="container">
+            <h2 class="section-title">Organizaciones y objetivos de búsqueda</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-up">
+                    <h4>E-commerce (transaccional)</h4>
+                    <p>Tiendas online optimizadas para conversión, procesos de compra rápidos y seguridad en pagos.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <h4>Institucional / Corporativo (navegacional)</h4>
+                    <p>Sitios de marca para comunicar misión, servicios y relaciones con inversores o prensa.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <h4>Recursos y Blogs (informacional)</h4>
+                    <p>Contenidos optimizados para posicionamiento y captación orgánica: guías, artículos y recursos descargables.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <h4>Negocios locales (búsqueda local)</h4>
+                    <p>Fichas, páginas de servicios y SEO local para aparecer en búsquedas geolocalizadas.</p>
+                </div>
+            </div>
+            <p class="muted">Diseñamos la estructura y contenido según la intención de búsqueda principal para maximizar el ROI.</p>
+        </section>
+
+        <!-- Qué ofrecemos (lista concreta) -->
+        <section class="container">
+            <h2 class="section-title">Servicios incluidos</h2>
+            <ul class="service-list fade-up">
+                <li>Diseño UX/UI y prototipado (Figma/Adobe XD)</li>
+                <li>Implementación responsive y accesible</li>
+                <li>Integración CMS (WordPress / Headless)</li>
+                <li>Optimización SEO on-page y estructura para motores</li>
+                <li>Performance: lazy-loading, minificación y caching</li>
+                <li>Analítica: Google Analytics, Google Tag Manager y reportes</li>
+                <li>Soporte y planes de mantenimiento y actualizaciones</li>
+                <li>Landing pages orientadas a campañas (ads / e-mail)</li>
             </ul>
+
+            <div class="cta-row">
+                <a href="../mapa-del-sitio/contacto.html" class="btn btn--primary">Solicitar presupuesto</a>
+                <a href="../mapa-del-sitio/portfolio.html" class="btn btn--ghost">Ver trabajos</a>
+            </div>
         </section>
     </main>
 
+    <!-- Footer mantenido y adaptado desde inicio.html -->
     <footer class="footer-dark">
         <div class="container">
             <div class="footer-columns">
+                <!-- Columna 1: Mapa del Sitio -->
                 <div class="footer-col">
                     <h4>Mapa del Sitio</h4>
                     <ul>
@@ -69,6 +165,7 @@
                     </ul>
                 </div>
 
+                <!-- Columna 2: Servicios -->
                 <div class="footer-col">
                     <h4>Servicios</h4>
                     <ul>
@@ -80,6 +177,7 @@
                     </ul>
                 </div>
 
+                <!-- Columna 3: Contáctenos -->
                 <div class="footer-col">
                     <h4>Contáctenos</h4>
                     <ul class="contact-info">
@@ -95,11 +193,22 @@
                 </div>
             </div>
 
+            <div class="footer-badges">
+                <img src="../assets/badges/data-fiscal.png" alt="Data Fiscal" class="badge">
+                <div class="certifications">
+                    <img src="../assets/badges/six-sigma.png" alt="Six Sigma Black Belt" class="cert-badge">
+                    <img src="../assets/badges/aida.png" alt="A.I.D.A Marketing Principles" class="cert-badge">
+                </div>
+            </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2023 - 2025 • Portal Diseño Web Argentina • Todos los Derechos Reservados</p>
                 <p>TEL: (011) 15-5139-6514 • Buenos Aires • Argentina</p>
+                <img src="../assets/logo-footer.png" alt="Portal" class="footer-logo">
             </div>
         </div>
     </footer>
+
+    <script src="../js/main.js"></script>
 </body>
 </html>

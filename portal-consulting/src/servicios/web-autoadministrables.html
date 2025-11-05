@@ -9,45 +9,122 @@
 <body>
     <header>
         <div class="header-inner container" role="banner">
-            <a class="logo" href="inicio.html">
-                <img src="portal logo.jpg" alt="Portal logo">
+            <a class="logo" href="../mapa-del-sitio/inicio.html">
+                <img src="../assets/logo_106x81.png" alt="Portal logo">
                 <span>Portal</span>
             </a>
 
-            <!-- Reemplaza el link existente en el nav con esto -->
             <nav role="navigation" aria-label="Principal">
-        <a href="/portal-consulting/src/mapa-del-sitio/inicio.html">Inicio</a>
+                <a href="../mapa-del-sitio/inicio.html">Inicio</a>
 
-        <div class="dropdown" id="dropdown-why">
-            <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
-                ¿Por qué Portal? <span class="arrow">▾</span>
-            </button>
-            <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
-                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegirnos?</a>
-                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a>
-                <a role="menuitem" href="/portal-consulting/src/mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a>
-            </div>
-        </div>
+                <div class="dropdown" id="dropdown-why">
+                    <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-why">
+                        ¿Por qué Portal? <span class="arrow">▾</span>
+                    </button>
+                    <div id="menu-why" class="dropdown-content" role="menu" aria-hidden="true">
+                        <a role="menuitem" href="../mapa-del-sitio/porque-elegir-portal.html">¿Por qué elegirnos?</a>
+                        <a role="menuitem" href="../mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                        <a role="menuitem" href="../mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a>
+                    </div>
+                </div>
 
-        <a href="/portal-consulting/src/mapa-del-sitio/servicios.html">Servicios</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/portfolio.html">Portfolio</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/clientes.html">Clientes</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/opiniones-cliente.html">Opiniones</a>
-        <a href="/portal-consulting/src/mapa-del-sitio/contacto.html" class="btn btn--primary">Contacto</a>
-    </nav>
+                <div class="dropdown" id="dropdown-services">
+                    <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-services">
+                        Servicios <span class="arrow">▾</span>
+                    </button>
+                    <div id="menu-services" class="dropdown-content" role="menu" aria-hidden="true">
+                        <a role="menuitem" href="../mapa-del-sitio/servicios.html">Resumen de Servicios</a>
+                        <a role="menuitem" href="diseno-web.html">Diseño Web</a>
+                        <a role="menuitem" href="web-adaptativas.html">Web Adaptativas</a>
+                        <a role="menuitem" href="web-autoadministrables.html">Web Autoadministrables</a>
+                        <a role="menuitem" href="hosting.html">Hosting</a>
+                        <a role="menuitem" href="actualizacion-web.html">Actualización de Páginas</a>
+                    </div>
+                </div>
+
+                <a href="../mapa-del-sitio/portfolio.html">Portfolio</a>
+                <a href="../mapa-del-sitio/clientes.html">Clientes</a>
+                <a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones</a>
+                <a href="../mapa-del-sitio/contacto.html" class="btn btn--primary">Contacto</a>
+            </nav>
         </div>
     </header>
 
-    <main class="container">
-        <section>
-            <h1>Páginas Web Autoadministrables</h1>
-            <p>Implementamos sitios con paneles de administración fáciles de usar para que puedas actualizar contenidos sin depender de desarrolladores:</p>
-            <ul>
-                <li>Gestión de páginas y entradas</li>
-                <li>Editor visual y gestión de imágenes</li>
-                <li>Roles y permisos de usuario</li>
-                <li>Formación y documentación al finalizar</li>
-            </ul>
+    <main>
+        <section class="hero-main container fade-up">
+            <div class="hero-content">
+                <span class="kicker">Autogestión</span>
+                <h1>Webs fáciles de administrar por tu equipo</h1>
+                <p>Sistemas pensados para que no dependas de desarrolladores: edición directa, roles y flujos de publicación.</p>
+                <div class="cta-row">
+                    <a href="../mapa-del-sitio/contacto.html" class="btn btn--primary">Solicitar demo</a>
+                    <a href="../mapa-del-sitio/portfolio.html" class="btn btn--ghost">Ver ejemplos</a>
+                </div>
+            </div>
+            <div class="hero-image zoom-in">
+                <img src="../assets/hero-illustration.svg" alt="Web autoadministrable">
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Opciones de CMS e interfaces</h2>
+            <div class="services-grid">
+                <div class="card fade-up">
+                    <h3>WordPress configurado</h3>
+                    <p>Panel simplificado, roles definidos y editor visual para equipos sin conocimientos técnicos.</p>
+                </div>
+                <div class="card fade-up">
+                    <h3>Headless CMS</h3>
+                    <p>Contenidos separados de la presentación: API para integraciones y múltiples canales (web, app).</p>
+                </div>
+                <div class="card fade-up">
+                    <h3>Sistemas a medida</h3>
+                    <p>Backoffice personalizado si necesitás workflows o integraciones con ERPs y CRMs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Herramientas y tecnologías</h2>
+            <div class="tech-icons fade-up">
+                <img src="../assets/icons/wordpress.svg" alt="WordPress" class="tech-icon" title="WordPress">
+                <img src="../assets/icons/php.svg" alt="PHP" class="tech-icon" title="PHP">
+                <img src="../assets/icons/python.svg" alt="Python" class="tech-icon" title="Python">
+                <img src="../assets/icons/strapi.svg" alt="Strapi" class="tech-icon" title="Strapi">
+                <img src="../assets/icons/netlify.svg" alt="Netlify" class="tech-icon" title="Netlify">
+            </div>
+            <p class="muted">Entrenamos a tu equipo y entregamos documentación para que la transición sea rápida.</p>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Para qué tipo de empresas</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-up">
+                    <h4>Pymes</h4>
+                    <p>Panel intuitivo para actualizar servicios, noticias y fichas de producto sin relevar desarrolladores.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <h4>Agencias</h4>
+                    <p>Plantillas y componentes reutilizables para entregar sitios rápidos a clientes finales.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <h4>Comercios</h4>
+                    <p>Gestión de catálogo, stock y contenidos promocionales con acceso por roles.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <h4>Instituciones</h4>
+                    <p>Control de publicaciones, accesos y documentación para equipos grandes.</p>
+                </div>
+            </div>
+            <p class="muted">Ofrecemos paquetes de formación y soporte para que tu equipo aproveche al máximo la autogestión.</p>
+        </section>
+
+        <section class="container cta-section">
+            <div class="cta-box fade-up">
+                <h2>Probá el backoffice</h2>
+                <p>Pide una demo guiada y evaluamos la mejor opción de CMS para tu flujo de trabajo.</p>
+                <a href="../mapa-del-sitio/contacto.html" class="btn btn--primary">Pedir demo</a>
+            </div>
         </section>
     </main>
 
@@ -62,7 +139,7 @@
                         <li><a href="../mapa-del-sitio/servicios.html">Servicios</a></li>
                         <li><a href="../mapa-del-sitio/portfolio.html">Portfolio</a></li>
                         <li><a href="../mapa-del-sitio/clientes.html">Clientes</a></li>
-                        <li><a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones de Clientes</a></li>
+                        <li><a href="../mapa-del-sitio/opiniones-cliente.html">Opiniones</a></li>
                         <li><a href="../mapa-del-sitio/preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
                         <li><a href="../mapa-del-sitio/contacto.html">Contacto</a></li>
                     </ul>
@@ -94,11 +171,18 @@
                 </div>
             </div>
 
+            <div class="footer-badges">
+                <img src="../assets/badges/data-fiscal.png" alt="Data Fiscal" class="badge">
+            </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2023 - 2025 • Portal Diseño Web Argentina • Todos los Derechos Reservados</p>
                 <p>TEL: (011) 15-5139-6514 • Buenos Aires • Argentina</p>
+                <img src="../assets/logo-footer.png" alt="Portal" class="footer-logo">
             </div>
         </div>
     </footer>
+
+    <script src="../js/main.js"></script>
 </body>
 </html>

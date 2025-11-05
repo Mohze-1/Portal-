@@ -132,6 +132,27 @@
                 <a href="contacto.html" class="btn btn--primary">Contactar ahora</a>
             </div>
         </section>
+
+        <!-- Stats destacados: % satisfacción, clientes, años -->
+        <section class="stats container fade-up" aria-label="Métricas de la agencia">
+            <div class="stat-card stat-gradient-1" role="article" aria-labelledby="stat-1">
+                <span id="stat-1" class="stat-value" data-target="98" data-format="{n}%">0%</span>
+                <span class="stat-label">Satisfacción promedio</span>
+                <span class="stat-sub">Basado en encuestas y reseñas</span>
+            </div>
+
+            <div class="stat-card stat-gradient-2" role="article" aria-labelledby="stat-2">
+                <span id="stat-2" class="stat-value" data-target="350" data-format="{n}+">0</span>
+                <span class="stat-label">Clientes satisfechos</span>
+                <span class="stat-sub">PYMES, tiendas y marcas</span>
+            </div>
+
+            <div class="stat-card stat-gradient-3" role="article" aria-labelledby="stat-3">
+                <span id="stat-3" class="stat-value" data-target="12" data-format="{n} años">0</span>
+                <span class="stat-label">Años de experiencia</span>
+                <span class="stat-sub">Equipos interdisciplinarios</span>
+            </div>
+        </section>
     </main>
 
     <!-- Reemplazar el footer actual con este -->
@@ -198,5 +219,30 @@
     </footer>
 
     <script src="../js/main.js"></script>
+
+    <script>
+    // Contador animado para métricas (simple y ligero)
+    (function(){
+        const els = document.querySelectorAll('.stat-value');
+        els.forEach(el => {
+            const target = parseInt(el.dataset.target || '0', 10);
+            const format = el.dataset.format || '{n}';
+            const duration = 1400;
+            const stepTime = 16;
+            const steps = Math.ceil(duration/stepTime);
+            let current = 0;
+            const increment = Math.max(1, Math.floor(target/steps));
+            const timer = setInterval(()=>{
+                current += increment;
+                if (current >= target) {
+                    el.textContent = format.replace('{n}', target);
+                    clearInterval(timer);
+                } else {
+                    el.textContent = format.replace('{n}', current);
+                }
+            }, stepTime);
+        });
+    })();
+    </script>
 </body>
 </html>
