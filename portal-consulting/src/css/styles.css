@@ -67,25 +67,24 @@ body {
 /* Header fijo, fondo oscuro y legible */
 header {
     position: fixed;
-    inset: 0 0 auto 0;
-    height: var(--header-height);
-    background: #000;
-    color: #fff;
-    z-index: 9999;
-    box-shadow: var(--shadow-md);
-    backdrop-filter: blur(6px);
-    display: block;
-    transition: transform 260ms var(--transition), visibility 260ms var(--transition);
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #0b0b0b;
+    z-index: 999;
+    padding: 0.9rem 0; /* mayor altura */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
 
+/* Inner: mantener el contenedor */
 .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
     width: min(1200px, 95%);
     margin: 0 auto;
     height: 100%;
-    display: flex;
-    align-items: center; /* mantener centrado verticalmente */
-    justify-content: space-between;
-    gap: 16px;
     padding: 0 16px;
     padding-top: 10px;    /* pequeño empuje hacia abajo para mayor separación visual */
     padding-bottom: 10px;
@@ -104,18 +103,19 @@ header {
 
 /* Imagen del logo: tamaño controlado y no se cortará */
 .logo img {
-    height: 150px;         /* aumentar la altura visible del logo */
+    height: 56px; /* suficiente para logo limpio */
     width: auto;
     display: block;
-    object-fit: contain;
-    border-radius: 10px;   /* opcional, suaviza si hay fondo */
+    image-rendering: optimizeQuality;
+    -webkit-font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
 }
 
-/* Aumentar separación del texto del logo para mejorar legibilidad */
+/* Texto del logo */
 .logo span {
-    font-size: 1rem;
-    line-height: 1;
     color: #fff;
+    font-weight: 700;
+    margin-left: 0.5rem;
 }
 
 /* Nav layout: horizontal, no wrapping */
@@ -1368,4 +1368,118 @@ blockquote {
 @media (max-width:720px){
     .stats{ gap:.75rem; margin:1.25rem 0; }
     .stat-value{ font-size:1.6rem; }
+}
+
+/* Color de hover solicitado */
+:root {
+    --accent-yellow: #ffd400; /* amarillo brillante */
+}
+
+/* Header: un poco más alto para que el logo 2x no se corte */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #0b0b0b;
+    z-index: 999;
+    padding: 0.9rem 0; /* mayor altura */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* Inner: mantener el contenedor */
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* Logo: servir imagen retina; controlar altura para evitar pixelado */
+.logo img {
+    height: 56px; /* suficiente para logo limpio */
+    width: auto;
+    display: block;
+    image-rendering: optimizeQuality;
+    -webkit-font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Texto del logo */
+.logo span {
+    color: #fff;
+    font-weight: 700;
+    margin-left: 0.5rem;
+}
+
+/* Nav layout */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Links base en header */
+nav a,
+nav .dropdown-trigger {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    transition: color .18s ease, background .18s ease;
+    font-weight: 500;
+}
+
+/* Hover: texto en amarillo solicitado (también para botones dropdown) */
+nav a:hover,
+nav a:focus,
+nav .dropdown-trigger:hover,
+nav .dropdown-trigger:focus {
+    color: var(--accent-yellow);
+    outline: none;
+}
+
+/* Asegurar que enlaces dentro de dropdown-content también respondan */
+.dropdown-content a:hover,
+.dropdown-content a:focus {
+    color: var(--accent-yellow);
+}
+
+/* Dropdown styles: mantener legible */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    background: #121212;
+    padding: 0.5rem;
+    border-radius: 8px;
+    min-width: 220px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 0.6rem 0.9rem;
+    color: #fff;
+    border-radius: 6px;
+}
+
+/* Accessible focus */
+nav a:focus, .dropdown-trigger:focus, .dropdown-content a:focus {
+    box-shadow: 0 0 0 3px rgba(255,212,0,0.12);
+}
+
+/* Responsive: reducir logo en pantallas pequeñas */
+@media (max-width: 600px) {
+    .logo img { height: 46px; }
+    header { padding: 0.6rem 0; }
 }

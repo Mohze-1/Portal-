@@ -14,6 +14,7 @@
                 <span>Portal</span>
             </a>
 
+            <!-- Reemplaza el link existente en el nav con esto -->
             <nav role="navigation" aria-label="Principal">
                 <a href="inicio.html">Inicio</a>
 
@@ -28,10 +29,24 @@
                     </div>
                 </div>
 
-                <a href="servicios.html">Servicios</a>
+                <!-- Nuevo dropdown: Servicios -->
+                <div class="dropdown" id="dropdown-services">
+                    <button class="dropdown-trigger" aria-expanded="false" aria-controls="menu-services">
+                        Servicios <span class="arrow">▾</span>
+                    </button>
+                    <div id="menu-services" class="dropdown-content" role="menu" aria-hidden="true">
+                        <a role="menuitem" href="servicios.html">Resumen de Servicios</a>
+                        <a role="menuitem" href="/portal-consulting/src/servicios/diseno-web.html">Diseño Web</a>
+                        <a role="menuitem" href="/portal-consulting/src/servicios/web-adaptativas.html">Web Adaptativas</a>
+                        <a role="menuitem" href="/portal-consulting/src/servicios/web-autoadministrables.html">Web Autoadministrables</a>
+                        <a role="menuitem" href="/portal-consulting/src/servicios/hosting.html">Hosting</a>
+                        <a role="menuitem" href="/portal-consulting/src/servicios/actualizacion-web.html">Actualización de Páginas</a>
+                    </div>
+                </div>
+
                 <a href="portfolio.html">Portfolio</a>
                 <a href="clientes.html">Clientes</a>
-                <a href="opiniones-cliente.html" class="active">Opiniones</a>
+                <a href="opiniones-cliente.html">Opiniones</a>
                 <a href="contacto.html" class="btn btn--primary">Contacto</a>
             </nav>
         </div>
