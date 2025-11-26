@@ -167,42 +167,75 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    // toggles para todos los dropdowns
+    // Manejar dropdowns
     document.querySelectorAll('.dropdown').forEach(drop => {
         const btn = drop.querySelector('.dropdown-trigger');
         const menu = drop.querySelector('.dropdown-content');
         if (!btn || !menu) return;
 
         btn.addEventListener('click', (e) => {
+            e.preventDefault();
             const expanded = btn.getAttribute('aria-expanded') === 'true';
-            // cerrar todos
+            
+            // Cerrar otros dropdowns
             document.querySelectorAll('.dropdown .dropdown-content').forEach(m => m.classList.remove('show'));
-            document.querySelectorAll('.dropdown .dropdown-trigger').forEach(b => b.setAttribute('aria-expanded', 'false'));
-            // toggle actual
+            document.querySelectorAll('.dropdown .dropdown-trigger').forEach(b => {
+                b.setAttribute('aria-expanded', 'false');
+                b.setAttribute('aria-hidden', 'true');
+            });
+            
+            // Toggle actual
             if (!expanded) {
                 menu.classList.add('show');
                 btn.setAttribute('aria-expanded', 'true');
                 menu.setAttribute('aria-hidden', 'false');
-            } else {
-                menu.classList.remove('show');
-                btn.setAttribute('aria-expanded', 'false');
-                menu.setAttribute('aria-hidden', 'true');
             }
         });
     });
 
-    // cerrar dropdowns al click fuera o con ESC
+    // Cerrar dropdowns al hacer clic fuera
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.dropdown')) {
             document.querySelectorAll('.dropdown .dropdown-content').forEach(m => m.classList.remove('show'));
-            document.querySelectorAll('.dropdown .dropdown-trigger').forEach(b => b.setAttribute('aria-expanded', 'false'));
+            document.querySelectorAll('.dropdown .dropdown-trigger').forEach(b => {
+                b.setAttribute('aria-expanded', 'false');
+                b.setAttribute('aria-hidden', 'true');
+            });
         }
     });
 
+    // Cerrar con ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             document.querySelectorAll('.dropdown .dropdown-content').forEach(m => m.classList.remove('show'));
-            document.querySelectorAll('.dropdown .dropdown-trigger').forEach(b => b.setAttribute('aria-expanded', 'false'));
+            document.querySelectorAll('.dropdown .dropdown-trigger').forEach(b => {
+                b.setAttribute('aria-expanded', 'false');
+                b.setAttribute('aria-hidden', 'true');
+            });
+        }
+    });
+
+    // Detectar página activa y marcar dropdown padre
+    const currentPage = window.location.pathname.split('/').pop();
+    
+    // Marcar link directo activo
+    document.querySelectorAll('nav a[href]').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+
+    // Marcar dropdown trigger activo si un item del dropdown está activo
+    document.querySelectorAll('.dropdown-content a').forEach(link => {
+        if (link.getAttribute('href').includes(currentPage) || 
+            link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+            // Marcar el trigger del dropdown como activo también
+            const dropdown = link.closest('.dropdown');
+            if (dropdown) {
+                const trigger = dropdown.querySelector('.dropdown-trigger');
+                if (trigger) trigger.classList.add('active');
+            }
         }
     });
 });
